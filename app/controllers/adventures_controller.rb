@@ -1,5 +1,5 @@
 class AdventuresController < ApplicationController
-  def show
+  def index
     @adventures = Adventure.all
   end
 end
