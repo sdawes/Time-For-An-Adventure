@@ -1,5 +1,5 @@
 ```````
-User Stories
+User Stories - MVP
 
 As a user
 So I can have an account
@@ -29,29 +29,68 @@ I would like to see the next paragraph
 
 
 
-Nice to have
+User Stories - Nice to have (To be added to Waffle after MVP)
+
+As a user
+So I can create my own adventures
+I want to be able to add an adventure
+
+As a user
+So I can change my own adventure
+I want to be able to edit my adventure
+
+As a user
+So I can erase my adventure
+I want to be able to delete my adventure
+
+As a user
+So I have control over my adventure
+I want only myself to be able to edit or delete my adventure
+
+As a user
+So i can login easily
+I want to log in with my Facebook account
 
 As a user
 So I can personalise my story
-Add names of users
+I want to be able to add user names
 
 As a user
-
-Add multiple players
-
-As a user
-Review the adventures
+So I can interact with others
+I want to be able to play with another player
 
 As a user
-Add graphics
+So I can interact all friends
+I want to be able to play with other players
 
 As a user
-messaging other players
+So I can let others know the best adventures
+I want to be able to review adventures
 
 As a user
- Timer, with warning messages
+So I can see the best adventures
+I want to be able to see the reviews
 
 As a user
-Points - Rewards or quick completion
+So I can enjoy the game
+I want to be able to see nice graphics
+
+As a user
+So I can interact with the other players
+I want to be able to message other players
+
+As a user
+So I can add a competitive element
+I want to be able to play against a timer
+
+As a user
+So I can see when I'm about to run out of time
+I want to be able to see warning messages
+
+As a user
+So I can see how well I'm doing
+I want to be able to score points
+
+React frontend reworked
 
 ```````
