@@ -1,1 +1,12 @@
-<h1>Welcome to time for an Adventure</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Adventure</title>
+  </head>
+  <body>
+    <% @adventures.each do |adventure|%>
+    <h1><%= adventure.title %></h1>
+    <% end %>
+  </body>
+</html>
