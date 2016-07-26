@@ -9,12 +9,12 @@ feature "adventures" do
 
   scenario "User can select an adventure" do
     adventure = create(:adventure)
-    user = create(:user)
 
-    sign_in_with(user)
     visit "/"
     click_link "Makers"
     expect(current_path).to eq "/adventures/#{adventure.id}"
     expect(page).to have_content "Synopsis"
   end
+
+
 end
