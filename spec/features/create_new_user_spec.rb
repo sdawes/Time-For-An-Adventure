@@ -13,9 +13,7 @@ feature "Creating a new user" do
     expect(page).to have_content 'Welcome! You have signed up successfully'
   end
 
-# --TEST BELOW-- If user bypasses html confirmation, the user receives an error if they do not enter a password.
-
-  scenario "requires a user name to successfully create an account", js: true do
+  xscenario "html validation requires a user name to successfully create an account", js: true do
     visit '/users/sign_up'
     fill_in 'Email', with: 'syxrailsdev@gmail.com'
     fill_in 'Password', with: 'password', match: :first
@@ -24,9 +22,8 @@ feature "Creating a new user" do
 
     expect(current_path).to eq '/users/sign_up'
   end
-  # --TEST BELOW-- If user bypasses html confirmation, the user receives an error if they do not enter a password.
 
-  scenario "requires a user name to successfully create an account" do
+  scenario "devise requires a user name to successfully create an account" do
     visit '/users/sign_up'
     fill_in 'Email', with: 'syxrailsdev@gmail.com'
     fill_in 'Password', with: 'password', match: :first
@@ -58,9 +55,7 @@ feature "Creating a new user" do
     expect(page).to have_content("is too long (maximum is 16 characters)")
   end
 
-# --TEST BELOW-- If user bypasses html confirmation, the user receives an error if they do not enter a password.
-
-  scenario "requires a password", js: true do
+  xscenario "html validation requires a password", js: true do
     visit '/users/sign_up'
     fill_in 'Email', with: 'syxrailsdev@gmail.com'
     fill_in 'User name', with: 'bobby'
@@ -70,7 +65,7 @@ feature "Creating a new user" do
     expect(current_path).to eq '/users/sign_up'
   end
 
-  scenario "requires a password" do
+  scenario "devise requires a password" do
     visit '/users/sign_up'
     fill_in 'Email', with: 'syxrailsdev@gmail.com'
     fill_in 'User name', with: 'bobby'
