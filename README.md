@@ -31,6 +31,10 @@ I would like to see the next paragraph
 
 User Stories - Nice to have (To be added to Waffle after MVP)
 
+As a user 
+So I can only play with known users 
+I want to be only play with registered users 
+
 As a user
 So I can create my own adventures
 I want to be able to add an adventure
@@ -90,6 +94,10 @@ I want to be able to see warning messages
 As a user
 So I can see how well I'm doing
 I want to be able to score points
+
+As a user 
+So I can confirm I have an account 
+I want to be able to recieve email notification 
 
 React frontend reworked
 
