@@ -60,12 +60,16 @@ So I can personalise my story
 I want to be able to add user names
 
 As a user
-So I can interact with others
+So I can enjoy the game with a friend
 I want to be able to play with another player
 
 As a user
-So I can interact all friends
-I want to be able to play with other players
+So I can play with all my friends
+I want to be able to play with mutiple players
+
+As a user 
+So I can interact with other users 
+I want to chat with users 
 
 As a user
 So I can let others know the best adventures
