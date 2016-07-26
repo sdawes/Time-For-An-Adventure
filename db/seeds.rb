@@ -1,5 +1,6 @@
-adventures = ["The midnight train to Bristol"]
+adventure = "The midnight train to Bristol"
 
+synopsis = "Another deeper look in Steve's mind"
 
 chapters = ["The midnight train. You received the letter late - “meet at Paddington Train Station and catch the 23:59 train to Bristol. Stay sober”. You find your way to platform 8, the station is deserted.",
 
@@ -35,9 +36,9 @@ choices = ["Board coach A - the quiet coach.",
            "Walk through the gate and knock on the door of Number 33 Dean Lane.",
            "Follow the man towards the river."]
 
-adventures.each do |adventure|
-  Adventure.create(title: adventure)
-end
+
+Adventure.create(title: adventure, synopsis: synopsis)
+
 
 chapters.each do |chapter|
   adventure = Adventure.where(title: "The midnight train to Bristol").first

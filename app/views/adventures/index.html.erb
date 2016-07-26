@@ -6,7 +6,7 @@
   </head>
   <body>
     <% @adventures.each do |adventure|%>
-    <h1><%= adventure.title %></h1>
+      <%= link_to "#{adventure.title}", adventure_path(adventure.id) %>
     <% end %>
   </body>
 </html>
