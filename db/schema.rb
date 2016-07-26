@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725152653) do
+ActiveRecord::Schema.define(version: 20160726091716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,23 @@ ActiveRecord::Schema.define(version: 20160725152653) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "chapters", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "adventure_id"
+    t.index ["adventure_id"], name: "index_chapters_on_adventure_id", using: :btree
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.string   "option"
+    t.integer  "resulting_chapter"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "chapter_id"
+    t.index ["chapter_id"], name: "index_choices_on_chapter_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +57,6 @@ ActiveRecord::Schema.define(version: 20160725152653) do
     t.index ["user_name"], name: "index_users_on_user_name", unique: true, using: :btree
   end
 
+  add_foreign_key "chapters", "adventures"
+  add_foreign_key "choices", "chapters"
 end
