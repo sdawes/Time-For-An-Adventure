@@ -6,14 +6,8 @@
   </head>
   <body>
     <%= @adventure.synopsis %>
-    <% if current_user %>
-     <form action="/adventures/<%= @adventure.id %>/chapters"  method="get">
+     <form action="<%= @redirection %>"  method="get">
        <input type="submit" value="Play">
      </form>
-    <% else %>
-      <form action="/users/sign_up"  method="get">
-        <input type="submit" value="Play">
-      </form>
-    <% end %>
   </body>
 </html>
