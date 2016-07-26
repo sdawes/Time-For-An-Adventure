@@ -1,0 +1,4 @@
+postgres:
+  adapter: postgresql
+  database: TFAA_test
+  username: postgres
