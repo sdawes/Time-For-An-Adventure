@@ -8,5 +8,5 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rspec spec/
 before_script:
-  - psql -c "create database TFAA_[RAILS_ENV]" -U postgres
+  - psql -c 'create database TFAA_test' -U postgres
 bundler_args: --binstubs=./bundler_stubs
