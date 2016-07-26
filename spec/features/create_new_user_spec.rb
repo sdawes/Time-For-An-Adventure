@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+# Two tests are pending but work! - to run they use selnium (gemfile) and firefox (version 41.0.1) 
+
 feature "Creating a new user" do
 
   scenario "can create a new user via the index page" do
