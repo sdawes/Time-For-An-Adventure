@@ -1,12 +1,12 @@
 # script: bundle exec rspec
 language: ruby
 rvm:
-  - 2.1.2
+  - 2.3.0
   # - 1.9.3
-env:
-  - DB=sqlite
-  - DB=mysql
-  - DB=postgresql
+# env:
+#   - DB=sqlite
+#   - DB=mysql
+#   - DB=postgresql
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   # - bundle exec rake db:test:prepare
