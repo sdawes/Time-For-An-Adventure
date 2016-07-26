@@ -1,6 +1,9 @@
-language: ruby
-rvm:
-  - 2.2.3
+matrix:
+  fast_finish: true
+  exclude:
+    - rvm: 2.2.3
+  allow_failures:
+    - rvm: ruby-head
 env:
   - DB=postgresql
 script:
@@ -10,3 +13,14 @@ script:
 before_script:
   - cp config/database.travis.yml config/databse.yml
   - psql -c 'create database TFAA_test' -U postgres
+
+# matrix:
+#   fast_finish: true
+#   exclude:
+#     - rvm: 2.2.3
+#   allow_failures:
+#     - rvm: ruby-head
+
+# language: ruby
+# rvm:
+#   - 2.2.3
