@@ -7,7 +7,6 @@
   <body>
     <% @adventures.each do |adventure|%>
     <h1><%= link_to "#{adventure.title}", adventure_path(adventure.id) %></h1>
-    p  adventures_path(adventure.id)
     <% end %>
   </body>
 </html>
