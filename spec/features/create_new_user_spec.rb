@@ -15,6 +15,17 @@ feature "Creating a new user" do
 
 # --TEST BELOW-- If user bypasses html confirmation, the user receives an error if they do not enter a password.
 
+  scenario "requires a user name to successfully create an account", js: true do
+    visit '/users/sign_up'
+    fill_in 'Email', with: 'syxrailsdev@gmail.com'
+    fill_in 'Password', with: 'password', match: :first
+    fill_in 'Password confirmation', with: 'password'
+    click_button 'Sign up'
+
+    expect(current_path).to eq '/users/sign_up'
+  end
+  # --TEST BELOW-- If user bypasses html confirmation, the user receives an error if they do not enter a password.
+
   scenario "requires a user name to successfully create an account" do
     visit '/users/sign_up'
     fill_in 'Email', with: 'syxrailsdev@gmail.com'
@@ -48,6 +59,16 @@ feature "Creating a new user" do
   end
 
 # --TEST BELOW-- If user bypasses html confirmation, the user receives an error if they do not enter a password.
+
+  scenario "requires a password", js: true do
+    visit '/users/sign_up'
+    fill_in 'Email', with: 'syxrailsdev@gmail.com'
+    fill_in 'User name', with: 'bobby'
+    fill_in 'Password confirmation', with: 'password'
+    click_button 'Sign up'
+
+    expect(current_path).to eq '/users/sign_up'
+  end
 
   scenario "requires a password" do
     visit '/users/sign_up'
