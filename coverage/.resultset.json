@@ -1,0 +1,103 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/helpers/adventures_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/adventure.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/adventures_controller.rb": [
+        1,
+        1,
+        8,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/registrations_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        7,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/chapter.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/choice.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1469540840
+  }
+}
