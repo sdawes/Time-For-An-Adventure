@@ -3,32 +3,32 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="sign_up_form">
+  <div class="registration_forms">
     <div class="field">
-      <%= f.label :user_name %><br />
-      <%= f.text_field :user_name, autofocus: true, required: true %>
+      <%= f.label :user_name, class: 'form_heading' %><br />
+      <%= f.text_field :user_name, autofocus: true, required: true, class: "form_input_box" %>
     </div>
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, required: true %>
+      <%= f.label :email, class: 'form_heading' %><br />
+      <%= f.email_field :email, required: true, class: "form_input_box" %>
     </div>
 
     <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
+      <%= f.label :password, class: 'form_heading' %>
+      <% if @minimum_password_length %> <br>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "off", required: true %>
+      <%= f.password_field :password, autocomplete: "off", required: true, class: "form_input_box" %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", required: true %>
+      <%= f.label :password_confirmation, class: 'form_heading' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", required: true, class: "form_input_box" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign up", id: 'small_sign_up_btn' %>
     </div>
   </div>
 <% end %>

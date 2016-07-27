@@ -14,14 +14,16 @@
  *= require_self
  */
 
+ // font-family: 'Source Sans Pro', sans-serif;
+
  body {
    font-family: 'Source Sans Pro', sans-serif;
  }
 
  .container {
-   margin: 2%;
+   height: 100%;
    background-color: #e9e8e8;
-  //  background-image: url('Ecresi.jpg');
+   background-image: url('Ecresi.jpg');
  }
 
  // ============= nav bar ==============
@@ -74,12 +76,89 @@
 
  // ============= forms ==============
 
- .sign_up_form {
-   border: 1px solid green;
+ .registration_forms {
+   margin: 0 auto;
+   background-color: white;
+   border-radius: 15px;
+   width: 325px;
+   margin: 10px auto;
+ }
+
+ .field {
+   text-align: center;
+   margin: 2%;
+ }
+
+ .actions {
+  //  border: 1px solid yellow;
+   text-align: center;
+ }
+
+ #log_in_button {
+   margin: 5px;
+   padding: 10px;
+   border-radius: 13px;
+   border: none;
+   color: white;
+   font-family: 'Indie Flower', cursive;
+   font-weight: 200;
+   text-decoration: none;
+ }
+
+ .form_heading {
+   font-size: 2em;
+   font-weight: 400;
+ }
+
+ .form_input_box {
+   width: 200px;
+   height: 25px;
+   border: none;
+   border-radius: 15px;
+   margin: 0.5%;
+   background-color: #e9e8e8;
+ }
+
+ #form_check_box {
+   border: 1px solid red;
+   width: 50px;
+ }
+
+ #small_log_in_btn {
+   margin: 5px;
+   padding: 10px;
+   border-radius: 13px;
+   border: none;
+   color: white;
+   font-family: 'Indie Flower', cursive;
+   font-weight: 200;
+   text-decoration: none;
+   background-color: #8b0407;
+   width: 100px;
+ }
+
+ #small_sign_up_btn {
+   margin: 5px;
+   padding: 10px;
+   border-radius: 13px;
+   border: none;
+   color: white;
+   font-family: 'Indie Flower', cursive;
+   font-weight: 200;
+   text-decoration: none;
+   background-color: #333333;
+   width: 100px;
  }
 
  .sign_up_h2 {
    border: 1px solid pink;
+   width: 325px;
+   text-align: center;
+   font-family: 'Indie Flower', cursive;
+   font-size: 2.5em;
+   border-radius: 15px 15px 0 0;
+   background-color: #8b0407;
+   color: white;
  }
 
  .sign_in_link {
