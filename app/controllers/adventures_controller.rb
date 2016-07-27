@@ -5,7 +5,14 @@ class AdventuresController < ApplicationController
 
   def show
     @adventure = Adventure.find(params[:id])
-    adventure_id = @adventure.id
+    @adventure_id = @adventure.id
+
+    if current_user
+      @redirection = "/adventures/#{@adventure_id}/chapters"
+    else
+      @redirection = "/users/sign_up"
+    end
+
   end
 
 end
