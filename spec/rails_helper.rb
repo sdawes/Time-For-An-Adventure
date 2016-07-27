@@ -16,6 +16,13 @@ end
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+
+  config.include Warden::Test::Helpers
+
+  config.before :suite do
+    Warden.test_mode!
+  end
+
   config.include AuthHelpers, type: :feature
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -31,12 +38,9 @@ config.include Warden::Test::Helpers
    Warden.test_reset!
  end
   config.use_transactional_fixtures = true
+config.infer_spec_type_from_file_location!
 
 
-  # https://relishapp.com/rspec/rspec-rails/docs
-  config.infer_spec_type_from_file_location!
-
-
-  config.filter_rails_from_backtrace!
+config.filter_rails_from_backtrace!
 
 end

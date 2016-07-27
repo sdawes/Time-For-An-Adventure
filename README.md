@@ -103,6 +103,10 @@ As a user
 So I can confirm I have an account 
 I want to be able to recieve email notification 
 
+As a user 
+So I can have a personalised experience 
+I want to have customised error messages 
+
 React frontend reworked
 
 ```````
