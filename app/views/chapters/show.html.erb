@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= @chapter.description %>
+    <br>
+    <% @choices.each do |choice| %>
+    <%= link_to "#{choice.option}", "/adventures/#{@chapter.adventure_id}/chapters/#{choice.resulting_chapter_id}" %>
+    <% end %>
+  </body>
+</html>

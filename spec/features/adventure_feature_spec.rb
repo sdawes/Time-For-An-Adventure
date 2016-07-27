@@ -16,18 +16,6 @@ feature "adventures" do
     expect(page).to have_content "Synopsis"
   end
 
-  scenario "User can see the first chapter of the adventure" do
-    adventure = create(:adventure)
-    chapter = create(:chapter, adventure_id: adventure.id)
-    user = create(:user)
-
-    sign_in_with(user)
-    click_link "Makers"
-    click_button "Play"
-    expect(current_path).to eq "/adventures/#{adventure.id}/chapters"
-    expect(page).to have_content("Chapter 1")
-  end
-
   scenario "User can't see the first chapter unless logged in" do
     adventure = create(:adventure)
     chapter = create(:chapter, adventure_id: adventure.id)
