@@ -13,12 +13,31 @@
 
     <div class="adventure_container">
       <% @adventures.each do |adventure|%>
-        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
-        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
-        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
-        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
-        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
-        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+
 
       <% end %>
     </div>

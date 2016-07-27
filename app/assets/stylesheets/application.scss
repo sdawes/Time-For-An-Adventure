@@ -185,4 +185,24 @@
    text-decoration: underline;
  }
 
-// ================== additional registration links ================
+// ================== media queries ================
+
+@media screen and (max-width: 670px) {
+
+  #nav_logo {
+   //  border: 2px solid orange;
+    width: 200px;
+    margin-left: 5%;
+  }
+
+  #button_log_in {
+    width: 50px;
+    font-size: 0.8em;
+  }
+
+  #button_sign_up {
+    width: 50px;
+    font-size: 0.8em;
+  }
+
+}

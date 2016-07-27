@@ -16,7 +16,7 @@
 }
 
 .adventure_container {
-  max-width: 800px;
+  max-width: 958px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -27,13 +27,44 @@
 }
 
 .adventure {
-  font-family: 'Indie Flower', cursive;
-  text-decoration: none;
-  color: black;
+  display: flex;
   text-align: center;
-  border: 1px solid red;
   width: 300px;
   height: 200px;
-  background-color: white;
+  background-color: #e9e8e8;
   margin: 1%;
+  border-radius: 15px;
+}
+
+.adventure_title {
+  width: 300px;
+  padding: 3% 0 0 0;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: white;
+  border-radius: 15px 15px 0 0;
+  background-color: #333333;
+  height: 20%;
+}
+
+// ================== media queries ================
+
+@media screen and (max-width: 670px) {
+
+  .main_logo_container {
+    margin: 0 auto 10px auto;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px dashed orange;
+  }
+
+  #main_logo {
+    max-width: 100%;
+    height: auto;
+    width: 70%;
+  }
+
 }
