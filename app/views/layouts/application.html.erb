@@ -20,9 +20,9 @@
       <nav class="nav_bar">
 
         <% if request.path == "/" %>
-          <div class="nav_logo_container">
+
             <%= link_to image_tag("nav_logo.png", id: "nav_logo", style: "display: none;"), root_path %>
-          </div>
+          
         <% else %>
           <%= link_to image_tag("nav_logo.png", id: "nav_logo"), root_path %>
         <% end %>

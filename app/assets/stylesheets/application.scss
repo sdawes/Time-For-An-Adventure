@@ -19,28 +19,26 @@
  html, body {
    height: 100%;
    font-family: 'Source Sans Pro', sans-serif;
+   background: url('background_img.jpg') no-repeat;
    background-color: #e9e8e8;
-    background: url('Ecresi.jpg') no-repeat;
-    background-size: cover;
+   background-size: cover;
  }
 
  // ============= nav bar ==============
 
  .nav_bar {
   //  border: 1px solid blue;
-   height: 100px;
+   height: 120px;
    width: 100%;
    display: flex;
    justify-content: space-between;
- }
-
- .nav_logo_container {
-  //  border: 2px dashed orange;
+   align-items: center;
  }
 
  #nav_logo {
+  //  border: 2px solid orange;
    width: 300px;
-  //  display: none;
+   margin-left: 5%;
  }
 
  .nav_links {
