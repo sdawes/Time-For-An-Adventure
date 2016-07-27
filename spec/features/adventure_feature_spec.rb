@@ -22,7 +22,8 @@ feature "adventures" do
     chapter = create(:chapter, adventure_id: adventure.id)
     user = create(:user)
 
-    sign_in_with(user)
+    login_as(user)
+    visit "/"
     click_link "Makers"
     click_button "Play"
     expect(current_path).to eq "/adventures/#{adventure.id}/chapters"
