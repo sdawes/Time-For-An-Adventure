@@ -1,10 +1,26 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
  body {
    font-family: 'Source Sans Pro', sans-serif;
  }
 
  .container {
    margin: 2%;
-   background-color: lightgrey;
+   background-color: #e9e8e8;
  }
 
  // ============= nav bar ==============
@@ -17,12 +33,13 @@
    justify-content: space-between;
  }
 
- .nav_logo {
+ .nav_logo_container {
    border: 2px dashed orange;
  }
 
- #nav_img {
+ #nav_logo {
    width: 300px;
+  //  display: none;
  }
 
  .nav_links {
@@ -74,25 +91,4 @@
 
  .forgot_password {
    border: 1px solid brown;
- }
-
- // ============= adventures ==============
-
- .adventure {
-   border: 1px solid yellow;
- }
-
- .adventure_logo {
-   margin: 0 auto;
-   width: 70%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border: 1px dashed orange;
- }
-
- #main_logo {
-   max-width: 100%;
-   height: auto;
-   width: 70%;
  }

@@ -3,13 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Adventure</title>
+
   </head>
   <body>
-    <div class="adventure_logo">
+
+    <div class="main_logo_container">
       <%= image_tag "nav_logo.png", id: 'main_logo' %>
     </div>
-    <% @adventures.each do |adventure|%>
-      <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
-    <% end %>
+
+    <div class="adventures_container">
+      <% @adventures.each do |adventure|%>
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
+      <% end %>
+    </div>
+
   </body>
 </html>
