@@ -15,7 +15,7 @@ feature "Creating a new user" do
     expect(page).to have_content 'Welcome! You have signed up successfully'
   end
 
-  xscenario "html validation requires a user name to successfully create an account", js: true do
+  xscenario "html validation requires a user name to successfully create an account(selenium test)", js: true do
     visit "/users/sign_up"
     fill_in "Email", with: "syxrailsdev@gmail.com"
     fill_in "Password", with: "password", match: :first
@@ -57,7 +57,7 @@ feature "Creating a new user" do
     expect(page).to have_content("is too long (maximum is 16 characters)")
   end
 
-  xscenario "html validation requires a password", js: true do
+  xscenario "html validation requires a password(selenium test)", js: true do
     visit "/users/sign_up"
     fill_in "Email", with: "syxrailsdev@gmail.com"
     fill_in "User name", with: "bobby"
