@@ -1,15 +1,98 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+ body {
+   font-family: 'Source Sans Pro', sans-serif;
+ }
+
+ .container {
+   margin: 2%;
+   background-color: lightgrey;
+ }
+
+ // ============= nav bar ==============
+
+ .nav_bar {
+   border: 1px solid blue;
+   height: 100px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .nav_logo {
+   border: 2px dashed orange;
+ }
+
+ #nav_img {
+   width: 300px;
+ }
+
+ .nav_links {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid lightgreen;
+   width: 30%;
+ }
+
+ .button {
+   margin: 5px;
+   padding: 10px;
+   border-radius: 13px;
+   border: none;
+   color: white;
+   font-family: 'Indie Flower', cursive;
+   font-weight: 200;
+   text-decoration: none;
+ }
+
+ #button_log_in {
+   background-color: #8b0407;
+   width: 100px;
+ }
+
+ #button_sign_up {
+   background-color: #333333;
+   width: 100px;
+ }
+
+ // ============= forms ==============
+
+ .sign_up_form {
+   border: 1px solid green;
+ }
+
+ .sign_up_h2 {
+   border: 1px solid pink;
+ }
+
+ .sign_in_link {
+   border: 1px solid yellow;
+ }
+
+ .sign_up_link {
+   border: 1px solid purple;
+ }
+
+ .forgot_password {
+   border: 1px solid brown;
+ }
+
+ // ============= adventures ==============
+
+ .adventure {
+   border: 1px solid yellow;
+ }
+
+ .adventure_logo {
+   margin: 0 auto;
+   width: 70%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px dashed orange;
+ }
+
+ #main_logo {
+   max-width: 100%;
+   height: auto;
+   width: 70%;
+ }

@@ -5,8 +5,11 @@
     <title>Adventure</title>
   </head>
   <body>
+    <div class="adventure_logo">
+      <%= image_tag "nav_logo.png", id: 'main_logo' %>
+    </div>
     <% @adventures.each do |adventure|%>
-      <%= link_to "#{adventure.title}", adventure_path(adventure.id) %>
+      <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure' %>
     <% end %>
   </body>
 </html>
