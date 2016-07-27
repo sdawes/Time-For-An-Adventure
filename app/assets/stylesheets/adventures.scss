@@ -16,7 +16,7 @@
 }
 
 .adventure_container {
-  max-width: 958px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -48,6 +48,43 @@
   height: 20%;
 }
 
+// ================== play ================
+
+.synopsis_text {
+  display: flex;
+  background-color: white;
+  width: 80%;
+  height: 100px;
+  margin: 5% auto 0 auto;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.2em;
+  padding: 2%;
+}
+
+.form_play {
+  // border: 1px solid green;
+  text-align: center;
+  padding-top: 2%;
+  font-size: 1.2em;
+}
+
+.play_button {
+    margin: 5px 5px 25px 5px;
+    padding: 10px;
+    border-radius: 13px;
+    border: none;
+    color: darkred;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 200;
+    text-decoration: none;
+    background-color: #e9e8e8;
+    width: 100px;
+
+}
+
 // ================== media queries ================
 
 @media screen and (max-width: 670px) {
@@ -65,6 +102,14 @@
     max-width: 100%;
     height: auto;
     width: 70%;
+  }
+
+}
+
+@media screen and (min-width: 1186px) {
+
+  .adventure_container {
+    max-width: 990px;
   }
 
 }
