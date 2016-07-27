@@ -1,38 +1,13 @@
-# matrix:
-#   fast_finish: true
-#   exclude:
-#     - rvm: 2.2.3
-#   allow_failures:
-#     - rvm: ruby-head
-# env:
-#   - DB=postgresql
-
-# script:
-#   - RAILS_ENV=test bundle exec rake db:migrate --trace
-#   - bundle exec rake db:test:prepare
-#   - bundle exec rspec spec/
-# before_script:
-#   - cp config/database.travis.yml config/databse.yml
-#   - psql -c 'create database TFAA_test' -U postgres
 
 language: ruby
 rvm:
  - 2.2.3
+
 env:
  - DB=postgresql
-before_install: cp config/database.travis.yml config/database.yml
+
 script:
  - export RAILS_ENV=test
  - bundle exec rake db:create db:migrate
  - bundle exec rake db:test:prepare
-
-# matrix:
-#   fast_finish: true
-#   exclude:
-#     - rvm: 2.2.3
-#   allow_failures:
-#     - rvm: ruby-head
-
-# language: ruby
-# rvm:
-#   - 2.2.3
+ - bundle exec rspec
