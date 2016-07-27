@@ -6,5 +6,8 @@
   </head>
   <body>
    <%= @adventure.synopsis %>
+   <form action="/adventures/<%= @adventure.id %>/chapters"  method="get">
+     <input type="submit" value="Play">
+   </form>
   </body>
 </html>

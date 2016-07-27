@@ -5,6 +5,7 @@ class AdventuresController < ApplicationController
 
   def show
     @adventure = Adventure.find(params[:id])
+    adventure_id = @adventure.id
   end
 
 end
