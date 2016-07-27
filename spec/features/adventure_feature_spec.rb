@@ -23,6 +23,7 @@ feature "adventures" do
 
     sign_in_with(user)
     click_link "Makers"
+    p page.htmlgit 
     click_button "Play"
     expect(current_path).to eq "/adventures/#{adventure.id}/chapters"
     expect(page).to have_content("Chapter 1")

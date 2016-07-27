@@ -8,11 +8,10 @@ class AdventuresController < ApplicationController
     @adventure_id = @adventure.id
 
     if current_user
-      @redirection = "/adventures/#{@adventure_id}/chapters"
+      @redirection = "/adventures/#{@adventure_id}/chapters/1"
     else
       @redirection = "/users/sign_up"
     end
 
   end
-
 end
