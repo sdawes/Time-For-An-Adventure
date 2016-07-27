@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jojograndjojo/Projects2/TFAA/app/models/user.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/models/user.rb": [
         1,
         null,
         null,
@@ -12,24 +12,24 @@
         null,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/models/application_record.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/helpers/adventures_helper.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/helpers/adventures_helper.rb": [
         1,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/helpers/application_helper.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/helpers/chapters_helper.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/helpers/chapters_helper.rb": [
         1,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/models/adventure.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/models/adventure.rb": [
         1,
         null,
         1,
@@ -38,7 +38,7 @@
         null,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/controllers/adventures_controller.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/controllers/adventures_controller.rb": [
         1,
         1,
         11,
@@ -58,12 +58,12 @@
         null,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/controllers/application_controller.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/models/chapter.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/models/chapter.rb": [
         1,
         null,
         1,
@@ -71,14 +71,14 @@
         null,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/controllers/chapters_controller.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/controllers/chapters_controller.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/controllers/registrations_controller.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/controllers/registrations_controller.rb": [
         1,
         null,
         1,
@@ -92,36 +92,36 @@
         null,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/models/choice.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/models/choice.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/channels/application_cable/channel.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/channels/application_cable/connection.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/jobs/application_job.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/jojograndjojo/Projects2/TFAA/app/mailers/application_mailer.rb": [
+      "/Users/MichaelLo/projects/TFAA/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1469615755
+    "timestamp": 1469629941
   }
 }
