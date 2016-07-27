@@ -1,0 +1,13 @@
+
+language: ruby
+rvm:
+ - 2.2.3
+
+env:
+ - DB=postgresql
+
+script:
+ - export RAILS_ENV=test
+ - bundle exec rake db:create db:migrate
+ - bundle exec rake db:test:prepare
+ - bundle exec rspec
