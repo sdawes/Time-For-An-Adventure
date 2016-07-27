@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Ross/final_project/TFAA/app/models/user.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/user.rb": [
         1,
         null,
         null,
@@ -12,24 +12,24 @@
         null,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/models/application_record.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/helpers/adventures_helper.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/helpers/adventures_helper.rb": [
         1,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/helpers/application_helper.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/helpers/chapters_helper.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/helpers/chapters_helper.rb": [
         1,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/models/adventure.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/adventure.rb": [
         1,
         null,
         1,
@@ -38,17 +38,17 @@
         null,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/controllers/adventures_controller.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/adventures_controller.rb": [
         1,
         1,
-        12,
+        11,
         null,
         null,
         1,
         3,
-        3,
         null,
         3,
+        1,
         1,
         null,
         2,
@@ -57,12 +57,12 @@
         null,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/controllers/application_controller.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/models/chapter.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/chapter.rb": [
         1,
         null,
         1,
@@ -70,15 +70,7 @@
         null,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/controllers/chapters_controller.rb": [
-        1,
-        1,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/Ross/final_project/TFAA/app/controllers/registrations_controller.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/registrations_controller.rb": [
         1,
         null,
         1,
@@ -92,36 +84,44 @@
         null,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/models/choice.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/choice.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/Ross/final_project/TFAA/app/channels/application_cable/channel.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/chapters_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/Ross/final_project/TFAA/app/channels/application_cable/connection.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/Ross/final_project/TFAA/app/jobs/application_job.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/Ross/final_project/TFAA/app/mailers/application_mailer.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1469634223
+    "timestamp": 1469636142
   }
 }
