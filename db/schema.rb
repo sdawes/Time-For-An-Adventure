@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20160726131802) do
 
   create_table "choices", force: :cascade do |t|
     t.string   "option"
-    t.integer  "resulting_chapter_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "resulting_chapter"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "chapter_id"
     t.index ["chapter_id"], name: "index_choices_on_chapter_id", using: :btree
   end
