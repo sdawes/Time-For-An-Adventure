@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Adventure, type: :model do
-  
+
   scenario "adventures have a unique title" do
     Adventure.create(title: "Hello")
     new_adventure = Adventure.new(title: "Hello")

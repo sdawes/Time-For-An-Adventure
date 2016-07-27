@@ -1,0 +1,6 @@
+postgresql: &postgresql
+ adapter: postgresql
+ username: postgres
+ password:
+ database: TFAA_<%= ENV['RAILS_ENV'] %>
+ min_messages: ERROR
