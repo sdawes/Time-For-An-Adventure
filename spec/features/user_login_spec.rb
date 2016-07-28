@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 # A test is pending but works! - to run use selnium (gemfile) and firefox (version 41.0.1)
 
 feature "User authentication" do
@@ -36,5 +36,26 @@ feature "User authentication" do
     click_button "Log out"
 
     expect(page).to have_content("Signed out successfully")
+  end
+end
+
+feature "User cannot sign up" do
+  scenario "username already exists" do
+    user = create(:user)
+    sign_up(user.user_name, "new@email.com", user.password, user.password_confirmation)
+
+    expect(page).to have_content("User name has already been taken")
+  end
+
+  scenario "email already exists" do
+    user = create(:user)
+    sign_up("new user", user.email, user.password, user.password_confirmation)
+
+    expect(page).to have_content("Email has already been taken")
+  end
+
+  scenario "passwords do not match" do
+    sign_up("username", "email@email.com", "password", "different password")
+    expect(page).to have_content("Password confirmation doesn't match Password")
   end
 end
