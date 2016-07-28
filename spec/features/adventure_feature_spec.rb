@@ -26,6 +26,6 @@ feature "adventures" do
     click_button "Play"
     expect(page).not_to have_content("Chapter 1")
     expect(current_path).to eq "/users/sign_up"
-    expect(page).to have_content "Log in"
+    expect(page).to have_content "Sign up"
   end
 end
