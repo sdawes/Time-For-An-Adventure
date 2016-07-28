@@ -19,9 +19,13 @@
 
       <nav class="nav_bar">
 
-        <div class="nav_logo">
-          <%= link_to image_tag("nav_logo.png", class: "img"), root_path %>
-        </div>
+        <% if request.path == "/" %>
+
+            <%= link_to image_tag("nav_logo.png", id: "nav_logo", style: "display: none;"), root_path %>
+          
+        <% else %>
+          <%= link_to image_tag("nav_logo.png", id: "nav_logo"), root_path %>
+        <% end %>
 
         <ul class="nav_links">
           <% if user_signed_in? %>

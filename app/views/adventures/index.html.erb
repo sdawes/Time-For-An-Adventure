@@ -3,10 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Adventure</title>
+
   </head>
   <body>
-    <% @adventures.each do |adventure|%>
-      <%= link_to "#{adventure.title}", adventure_path(adventure.id) %>
-    <% end %>
+
+    <div class="main_logo_container">
+      <%= image_tag "nav_logo.png", id: 'main_logo' %>
+    </div>
+
+    <div class="adventure_container">
+      <% @adventures.each do |adventure|%>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+      <div class="adventure">
+        <%= link_to "#{adventure.title}", adventure_path(adventure.id), class: 'adventure_title' %>
+      </div>
+
+
+      <% end %>
+    </div>
+
   </body>
 </html>

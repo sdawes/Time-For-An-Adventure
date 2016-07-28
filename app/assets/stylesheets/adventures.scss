@@ -1,84 +1,120 @@
-// Place all the styles related to the adventures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-// font-family: 'Source Sans Pro', sans-serif;
-// font-family: 'Indie Flower', cursive;
-
-
-body {
-  height: 100%;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.container {
-  padding: 2%;
-}
-
-// ============= nav bar ==============
-
-.nav_bar {
-  border: 1px solid blue;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav_logo {
-  border: 2px dashed orange;
-}
-
-.img {
-  width: 300px;
-}
-
-.nav_links {
+// ============= adventures ==============
+.main_logo_container {
+  margin: 0 auto;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid lightgreen;
-  width: 30%;
+  // border: 1px dashed orange;
 }
 
-.button {
-  margin: 5px;
-  padding: 10px;
-  border-radius: 13px;
-  border: none;
-  color: white;
-  font-family: 'Indie Flower', cursive;
-  font-weight: 200;
-  text-decoration: none;
+#main_logo {
+  max-width: 100%;
+  height: auto;
+  width: 70%;
 }
 
-#button_log_in {
+.adventure_container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  // border: 1px solid yellow;
+  padding: 1%;
+}
+
+.adventure {
+  display: flex;
+  text-align: center;
+  width: 300px;
+  height: 200px;
+  background-color: #e9e8e8;
+  margin: 1%;
+  border-radius: 15px;
+}
+
+.adventure:hover {
   background-color: #8b0407;
-  width: 100px;
 }
 
-#button_sign_up {
+.adventure_title {
+  width: 300px;
+  padding: 3% 0 0 0;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: white;
+  border-radius: 15px 15px 0 0;
   background-color: #333333;
-  width: 100px;
+  height: 20%;
 }
 
-// ============= forms ==============
+// ================== play ================
 
-.sign_up_form {
-  border: 1px solid green;
+.synopsis_text {
+  display: flex;
+  background-color: #666666;
+  width: 80%;
+  height: 100px;
+  margin: 5% auto 0 auto;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.2em;
+  padding: 2%;
+  color: white;
 }
 
-.sign_up_h2 {
-  border: 1px solid pink;
+.form_play {
+  // border: 1px solid green;
+  text-align: center;
+  padding-top: 2%;
+  font-size: 1.2em;
 }
 
-.sign_in_link {
-  border: 1px solid yellow;
+.play_button {
+    margin: 5px 5px 25px 5px;
+    padding: 10px;
+    border-radius: 13px;
+    border: none;
+    color: darkred;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 200;
+    text-decoration: none;
+    background-color: #e9e8e8;
+    width: 100px;
+
 }
 
-.sign_up_link {
-  border: 1px solid purple;
+// ================== media queries ================
+
+@media screen and (max-width: 670px) {
+
+  .main_logo_container {
+    margin: 0 auto 10px auto;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px dashed orange;
+  }
+
+  #main_logo {
+    max-width: 100%;
+    height: auto;
+    width: 70%;
+  }
+
 }
 
-.forgot_password {
-  border: 1px solid brown;
+@media screen and (min-width: 1186px) {
+
+  .adventure_container {
+    max-width: 990px;
+  }
+
 }

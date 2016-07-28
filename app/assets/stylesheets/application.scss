@@ -13,3 +13,196 @@
  *= require_tree .
  *= require_self
  */
+
+ // font-family: 'Source Sans Pro', sans-serif;
+
+ html, body {
+   height: 100%;
+   font-family: 'Source Sans Pro', sans-serif;
+   background: url('background_img.jpg') no-repeat;
+   background-color: #e9e8e8;
+   background-size: cover;
+ }
+
+ // ============= nav bar ==============
+
+ .nav_bar {
+  //  border: 1px solid blue;
+   height: 120px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ #nav_logo {
+  //  border: 2px solid orange;
+   width: 300px;
+   margin-left: 5%;
+ }
+
+ .nav_links {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  //  border: 1px solid lightgreen;
+   width: 30%;
+ }
+
+ .button {
+   margin: 5px;
+   padding: 10px;
+   border-radius: 13px;
+   border: none;
+   color: white;
+   font-family: 'Indie Flower', cursive;
+   font-weight: 200;
+   text-decoration: none;
+ }
+
+ #button_log_in {
+   background-color: #8b0407;
+   width: 100px;
+ }
+
+ #button_sign_up {
+   background-color: #333333;
+   width: 100px;
+ }
+
+ // ============= registration forms ==============
+
+ .registration_forms {
+   margin: 0 auto;
+   background-color: white;
+   border-radius: 15px;
+   width: 325px;
+   margin: 10px auto;
+ }
+
+ .form_title {
+   width: 325px;
+   text-align: center;
+   font-size: 2em;
+   font-weight: 600;
+   border-radius: 15px 15px 0 0;
+   background-color: #8b0407;
+   color: white;
+ }
+
+ .form_title_grey {
+   width: 325px;
+   text-align: center;
+   font-size: 2em;
+   font-weight: 600;
+   border-radius: 15px 15px 0 0;
+   background-color: #333333;
+   color: white;
+ }
+
+ .sign_up_h2 {
+   padding: 2%;
+}
+
+ .field {
+   text-align: center;
+   margin: 2.5%;
+ }
+
+ .actions {
+  //  border: 1px solid yellow;
+   text-align: center;
+ }
+
+ #log_in_button {
+   margin: 5px;
+   padding: 10px;
+   border-radius: 13px;
+   border: none;
+   color: white;
+   font-family: 'Indie Flower', cursive;
+   font-weight: 200;
+   text-decoration: none;
+ }
+
+ .form_heading {
+   font-size: 1.5em;
+   font-weight: 400;
+ }
+
+ .form_input_box {
+   width: 200px;
+   height: 25px;
+   border: none;
+   border-radius: 15px;
+   margin: 0.5%;
+   background-color: #e9e8e8;
+ }
+
+ #form_check_box {
+   border: 1px solid red;
+   width: 50px;
+ }
+
+ #small_log_in_btn {
+   margin: 5px 5px 25px 5px;
+   padding: 10px;
+   border-radius: 13px;
+   border: none;
+   color: white;
+   font-family: 'Indie Flower', cursive;
+   font-weight: 200;
+   text-decoration: none;
+   background-color: #8b0407;
+   width: 100px;
+ }
+
+ #small_sign_up_btn {
+   margin: 5px 5px 25px 5px;
+   padding: 10px;
+   border-radius: 13px;
+   border: none;
+   color: white;
+   font-family: 'Indie Flower', cursive;
+   font-weight: 200;
+   text-decoration: none;
+   background-color: #333333;
+   width: 100px;
+ }
+
+// ================== additional registration links ================
+
+ .forgot_pw {
+   text-align: center;
+ }
+
+ .forgot_password {
+   text-decoration: none;
+   color: black;
+ }
+
+ .forgot_password:hover {
+   text-decoration: underline;
+ }
+
+// ================== media queries ================
+
+@media screen and (max-width: 670px) {
+
+  #nav_logo {
+   //  border: 2px solid orange;
+    width: 200px;
+    margin-left: 5%;
+  }
+
+  #button_log_in {
+    width: 50px;
+    font-size: 0.8em;
+  }
+
+  #button_sign_up {
+    width: 50px;
+    font-size: 0.8em;
+  }
+
+}
