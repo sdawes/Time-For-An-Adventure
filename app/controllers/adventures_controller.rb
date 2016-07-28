@@ -5,14 +5,13 @@ class AdventuresController < ApplicationController
 
   def show
     @adventure = Adventure.find(params[:id])
-    @adventure_id = @adventure.id
 
     if current_user
-      @redirection = "/adventures/#{@adventure_id}/chapters"
+      @first_chapter = Chapter.where(adventure_id: "#{@adventure.id}").first
+      @redirection = "/adventures/#{@adventure.id}/chapters/#{@first_chapter.id}"
     else
       @redirection = "/users/sign_up"
     end
 
   end
-
 end
