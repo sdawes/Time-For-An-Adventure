@@ -1,7 +1,11 @@
 def sign_in_with(user)
   visit '/'
-  click_link 'Log in'
+  within('.nav_links') do
+    click_button 'Log in'
+  end
   fill_in 'Email', with: user.email
   fill_in 'Password', with: user.password
-  click_button 'Log in'
+  within('.actions') do
+    click_button 'Log in'
+  end
 end

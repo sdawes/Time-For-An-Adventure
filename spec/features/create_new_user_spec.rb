@@ -11,7 +11,9 @@ feature "Creating a new user" do
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
 
-    click_button "Sign up"
+    within('.actions') do
+      click_button "Sign up"
+    end
     expect(page).to have_content 'Welcome! You have signed up successfully'
   end
 
@@ -20,7 +22,9 @@ feature "Creating a new user" do
     fill_in "Email", with: "syxrailsdev@gmail.com"
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
-    click_button "Sign up"
+    within('.actions') do
+      click_button "Sign up"
+    end
 
     expect(current_path).to eq "/users/sign_up"
   end
@@ -31,7 +35,9 @@ feature "Creating a new user" do
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
 
-    click_button "Sign up"
+    within('.actions') do
+      click_button "Sign up"
+    end
     expect(page).to have_content("can't be blank")
   end
 
@@ -42,7 +48,9 @@ feature "Creating a new user" do
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
 
-    click_button "Sign up"
+    within('.actions') do
+      click_button "Sign up"
+    end
     expect(page).to have_content("is too short (minimum is 4 characters)")
   end
 
@@ -53,7 +61,9 @@ feature "Creating a new user" do
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
 
-    click_button "Sign up"
+    within('.actions') do
+      click_button "Sign up"
+    end
     expect(page).to have_content("is too long (maximum is 16 characters)")
   end
 
@@ -62,7 +72,9 @@ feature "Creating a new user" do
     fill_in "Email", with: "syxrailsdev@gmail.com"
     fill_in "User name", with: "bobby"
     fill_in "Password confirmation", with: "password"
-    click_button "Sign up"
+    within('.actions') do
+      click_button "Sign up"
+    end
 
     expect(current_path).to eq "/users/sign_up"
   end
@@ -73,7 +85,9 @@ feature "Creating a new user" do
     fill_in "User name", with: "bobby"
     fill_in "Password confirmation", with: "password"
 
-    click_button "Sign up"
+    within('.actions') do
+      click_button "Sign up"
+    end
     expect(page).to have_content("can't be blank")
   end
 
@@ -84,7 +98,9 @@ feature "Creating a new user" do
     fill_in "Password", with: "pass"
     fill_in "Password confirmation", with: "password"
 
-    click_button "Sign up"
+    within('.actions') do
+      click_button "Sign up"
+    end
     expect(page).to have_content("6 characters minimum")
   end
 
@@ -95,7 +111,9 @@ feature "Creating a new user" do
     fill_in "Password", with: "password1"
     fill_in "Password confirmation", with: "password2"
 
-    click_button "Sign up"
+    within('.actions') do
+      click_button "Sign up"
+    end
     expect(page).to have_content("doesn't match Password")
   end
 end
