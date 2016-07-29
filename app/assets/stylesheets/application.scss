@@ -61,13 +61,24 @@
  }
 
  #button_log_in {
+   display: block;
    background-color: #8b0407;
-   width: 100px;
+   text-align: center;
+   width: 50px;
  }
 
  #button_sign_up {
+   display: block;
    background-color: #333333;
-   width: 100px;
+   text-align: center;
+   width: 50px;
+ }
+
+ #button_log_out {
+   display: block;
+   background-color: #666666;
+   text-align: center;
+   width: 50px;
  }
 
  // ============= registration forms ==============
@@ -190,7 +201,7 @@
 @media screen and (max-width: 670px) {
 
   #nav_logo {
-   //  border: 2px solid orange;
+    // border: 2px solid orange;
     width: 200px;
     margin-left: 5%;
   }

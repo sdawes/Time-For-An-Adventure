@@ -10,24 +10,24 @@
     </div>
 
     <div class="field">
-      <%= f.label :email, class: 'form_heading' %><br />
+      <%= f.label :email, class: "form_heading" %><br />
       <%= f.email_field :email, autofocus: true, required: true, class: "form_input_box" %>
     </div>
 
     <div class="field">
-      <%= f.label :password, class: 'form_heading' %><br />
+      <%= f.label :password, class: "form_heading" %><br />
       <%= f.password_field :password, autocomplete: "off", required: true, class: "form_input_box"  %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
       <div class="field">
         <%= f.check_box :remember_me %>
-        <%= f.label :remember_me, class: 'form_heading'  %>
+        <%= f.label :remember_me, class: "form_heading"  %>
       </div>
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "Log in", id: 'small_log_in_btn' %>
+      <%= f.submit "Log in", id: "small_log_in_btn" %>
     </div>
   </div>
 
