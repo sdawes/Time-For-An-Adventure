@@ -25,7 +25,7 @@ feature "User authentication" do
 
     expect(page).to have_content("Signed in successfully.")
     expect(page).to_not have_content("Sign up")
-    expect(page).to have_button("Log out")
+    expect(page).to have_link("Log out")
   end
 
   scenario "A user with an account can log out" do
@@ -33,7 +33,7 @@ feature "User authentication" do
 
     sign_in_with(user)
 
-    click_button "Log out"
+    click_link "Log out"
 
     expect(page).to have_content("Signed out successfully")
   end
