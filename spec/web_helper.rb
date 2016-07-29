@@ -12,14 +12,10 @@ end
 
 def sign_up(username, email, password, password_confirmation)
   visit "/"
-  within(".nav_links") do
-    click_button "Sign up"
-  end
+  click_link "Sign up"
   fill_in "User name", with: username
   fill_in "Email", with: email
   fill_in "Password", with: password
   fill_in "Password confirmation", with: password_confirmation
-  within(".actions") do
-    click_button "Sign up"
-  end
+  click_button "Sign up"
 end
