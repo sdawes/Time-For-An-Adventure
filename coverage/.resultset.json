@@ -29,29 +29,20 @@
         1,
         null
       ],
-      "/Users/Marlon/Desktop/Makers/TFAA/app/models/adventure.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
       "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/adventures_controller.rb": [
         1,
         1,
-        12,
+        9,
         null,
         null,
         1,
-        4,
+        0,
         null,
-        4,
-        2,
-        2,
+        0,
+        0,
+        0,
         null,
-        2,
+        0,
         null,
         null,
         null,
@@ -62,10 +53,11 @@
         1,
         null
       ],
-      "/Users/Marlon/Desktop/Makers/TFAA/app/models/chapter.rb": [
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/adventure.rb": [
         1,
         null,
         1,
+        null,
         1,
         null,
         null
@@ -76,26 +68,11 @@
         1,
         null,
         1,
-        7,
+        3,
         null,
         null,
         1,
         0,
-        null,
-        null
-      ],
-      "/Users/Marlon/Desktop/Makers/TFAA/app/models/choice.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/chapters_controller.rb": [
-        1,
-        1,
-        3,
-        3,
         null,
         null
       ],
@@ -111,6 +88,14 @@
         0,
         0
       ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/chapters_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "/Users/Marlon/Desktop/Makers/TFAA/app/jobs/application_job.rb": [
         0,
         0
@@ -120,8 +105,23 @@
         0,
         0,
         0
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/chapter.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/choice.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1469701451
+    "timestamp": 1469707435
   }
 }
