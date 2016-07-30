@@ -5,10 +5,14 @@
     <title></title>
   </head>
   <body>
-    <%= @chapter.description %>
+    <div class="chapter_container">
+      <%= @chapter.description %>
+    </div>
     <br>
-    <% @choices.each do |choice| %>
-    <%= link_to "#{choice.option}", "/adventures/#{@chapter.adventure_id}/chapters/#{choice.resulting_chapter_id}" %>
-    <% end %>
+    <div class="choices_container">
+      <% @choices.each do |choice| %>
+        <%= link_to "#{choice.option}", "/adventures/#{@chapter.adventure_id}/chapters/#{choice.resulting_chapter_id}",id:"choice_button", class:"button" %>
+      <% end %>
+    </div>
   </body>
 </html>

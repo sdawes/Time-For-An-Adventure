@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 # Two tests are pending but work! - to run they use selnium (gemfile) and firefox (version 41.0.1)
 
@@ -11,10 +11,10 @@ feature "Creating a new user" do
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
 
-    within('.actions') do
+    within(".actions") do
       click_button "Sign up"
     end
-    expect(page).to have_content 'Welcome! You have signed up successfully'
+    expect(page).to have_content "Welcome! You have signed up successfully"
   end
 
   xscenario "html validation requires a user name to successfully create an account(selenium test)", js: true do
@@ -22,7 +22,7 @@ feature "Creating a new user" do
     fill_in "Email", with: "syxrailsdev@gmail.com"
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
-    within('.actions') do
+    within(".actions") do
       click_button "Sign up"
     end
 
@@ -35,7 +35,7 @@ feature "Creating a new user" do
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
 
-    within('.actions') do
+    within(".actions") do
       click_button "Sign up"
     end
     expect(page).to have_content("can't be blank")
@@ -48,7 +48,7 @@ feature "Creating a new user" do
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
 
-    within('.actions') do
+    within(".actions") do
       click_button "Sign up"
     end
     expect(page).to have_content("is too short (minimum is 4 characters)")
@@ -61,7 +61,7 @@ feature "Creating a new user" do
     fill_in "Password", with: "password", match: :first
     fill_in "Password confirmation", with: "password"
 
-    within('.actions') do
+    within(".actions") do
       click_button "Sign up"
     end
     expect(page).to have_content("is too long (maximum is 16 characters)")
@@ -72,7 +72,7 @@ feature "Creating a new user" do
     fill_in "Email", with: "syxrailsdev@gmail.com"
     fill_in "User name", with: "bobby"
     fill_in "Password confirmation", with: "password"
-    within('.actions') do
+    within(".actions") do
       click_button "Sign up"
     end
 
@@ -85,7 +85,7 @@ feature "Creating a new user" do
     fill_in "User name", with: "bobby"
     fill_in "Password confirmation", with: "password"
 
-    within('.actions') do
+    within(".actions") do
       click_button "Sign up"
     end
     expect(page).to have_content("can't be blank")
@@ -98,7 +98,7 @@ feature "Creating a new user" do
     fill_in "Password", with: "pass"
     fill_in "Password confirmation", with: "password"
 
-    within('.actions') do
+    within(".actions") do
       click_button "Sign up"
     end
     expect(page).to have_content("6 characters minimum")
@@ -111,7 +111,7 @@ feature "Creating a new user" do
     fill_in "Password", with: "password1"
     fill_in "Password confirmation", with: "password2"
 
-    within('.actions') do
+    within(".actions") do
       click_button "Sign up"
     end
     expect(page).to have_content("doesn't match Password")

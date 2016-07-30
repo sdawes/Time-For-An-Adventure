@@ -4,12 +4,12 @@
     <title>TFAA</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag 'application','http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application","http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css" %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
 
-    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet" type="text/css">
   </head>
 
   <body>
@@ -22,7 +22,7 @@
         <% if request.path == "/" %>
 
             <%= link_to image_tag("nav_logo.png", id: "nav_logo", style: "display: none;"), root_path %>
-          
+
         <% else %>
           <%= link_to image_tag("nav_logo.png", id: "nav_logo"), root_path %>
         <% end %>
@@ -30,15 +30,15 @@
         <ul class="nav_links">
           <% if user_signed_in? %>
             <li>
-              <%= button_to "Log out", destroy_user_session_path, id: 'button_log_out', class: 'button', method: :delete %>
+              <%= link_to "Log out", destroy_user_session_path, id: "button_log_out", class: "button", method: :delete %>
             </li>
           <% else %>
             <li>
-              <%= button_to "Log in", new_user_session_path, id: 'button_log_in', class: 'button', method: :get %>
+              <%= link_to "Log in", new_user_session_path, id: "button_log_in", class: "button", method: :get %>
             </li>
 
             <li>
-              <%= button_to "Sign up", new_user_registration_path, id: 'button_sign_up', class: 'button', method: :get %>
+              <%= link_to "Sign up", new_user_registration_path, id: "button_sign_up", class: "button", method: :get %>
             </li>
           <% end %>
         </ul>
