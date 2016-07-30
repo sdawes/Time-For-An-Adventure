@@ -10,32 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729114048) do
+ActiveRecord::Schema.define(version: 20160730165305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "adventures", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "synopsis"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "chapters", force: :cascade do |t|
-    t.string   "description",  null: false
+    t.string   "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "adventure_id", null: false
+    t.integer  "adventure_id"
     t.index ["adventure_id"], name: "index_chapters_on_adventure_id", using: :btree
   end
 
   create_table "choices", force: :cascade do |t|
     t.string   "option",               null: false
-    t.integer  "resulting_chapter_id", null: false
+    t.integer  "resulting_chapter_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.integer  "chapter_id",           null: false
+    t.integer  "chapter_id"
     t.index ["chapter_id"], name: "index_choices_on_chapter_id", using: :btree
   end
 

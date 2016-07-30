@@ -52,7 +52,7 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'rspec-collection_matchers'
-  # Use shoulda matchers for one line test validations 
+  # Use shoulda matchers for one line test validations
   gem 'shoulda-matchers'
   # Use rails controller for controller test syntax
   gem 'rails-controller-testing'
@@ -61,3 +61,4 @@ group :test do
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'paperclip'

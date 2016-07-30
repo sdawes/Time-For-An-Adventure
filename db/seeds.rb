@@ -37,7 +37,7 @@ choices = ["Board coach A - the quiet coach.",
            "Follow the man towards the river."]
 
 
-Adventure.create(title: adventure, synopsis: synopsis)
+Adventure.create(title: adventure, synopsis: synopsis, image: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
 
 
 chapters.each do |chapter|
