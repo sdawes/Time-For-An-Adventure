@@ -8,8 +8,8 @@
     <div class="synopsis_text">
       <%= @adventure.synopsis %>
     </div>
-     <form class="form_play" action="<%= @redirection %>"  method="get">
-       <input class="play_button" type="submit" value="Play">
-     </form>
+    <div class="form_play">
+      <%= link_to "Play", adventure_chapter_path(@adventure, @first_chapter), class: "play_button"%>
+    </div>
   </body>
 </html>

@@ -11,7 +11,7 @@ feature "Playing the adventure" do
     login_as(user)
     visit '/'
     click_link "Makers"
-    click_button "Play"
+    click_link "Play"
     expect(page).to have_content "chapter 1"
     expect(page).to have_content "choice 1"
     expect(page).to have_content "choice 2"
@@ -27,7 +27,7 @@ feature "Playing the adventure" do
     login_as(user)
     visit "/"
     click_link "Makers"
-    click_button "Play"
+    click_link "Play"
     click_link "choice 1"
     expect(page).to have_content "chapter 2"
     expect(page).to have_content "choice 2"
