@@ -1,6 +1,18 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/MichaelLo/projects/TFAA/app/helpers/adventures_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/MichaelLo/projects/TFAA/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/MichaelLo/projects/TFAA/app/helpers/chapters_helper.rb": [
+        1,
+        null
+      ],
       "/Users/MichaelLo/projects/TFAA/app/models/user.rb": [
         1,
         null,
@@ -14,18 +26,6 @@
       ],
       "/Users/MichaelLo/projects/TFAA/app/models/application_record.rb": [
         1,
-        1,
-        null
-      ],
-      "/Users/MichaelLo/projects/TFAA/app/helpers/adventures_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/MichaelLo/projects/TFAA/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/MichaelLo/projects/TFAA/app/helpers/chapters_helper.rb": [
         1,
         null
       ],
@@ -112,6 +112,6 @@
         null
       ]
     },
-    "timestamp": 1469886522
+    "timestamp": 1469888221
   }
 }
