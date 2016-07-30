@@ -14,6 +14,7 @@ feature "Creating a new user" do
     within(".actions") do
       click_button "Sign up"
     end
+    
     expect(page).to have_content "Welcome! You have signed up successfully"
   end
 
@@ -38,6 +39,7 @@ feature "Creating a new user" do
     within(".actions") do
       click_button "Sign up"
     end
+
     expect(page).to have_content("can't be blank")
   end
 
@@ -51,6 +53,7 @@ feature "Creating a new user" do
     within(".actions") do
       click_button "Sign up"
     end
+
     expect(page).to have_content("is too short (minimum is 4 characters)")
   end
 
@@ -64,6 +67,7 @@ feature "Creating a new user" do
     within(".actions") do
       click_button "Sign up"
     end
+
     expect(page).to have_content("is too long (maximum is 16 characters)")
   end
 
@@ -88,6 +92,7 @@ feature "Creating a new user" do
     within(".actions") do
       click_button "Sign up"
     end
+
     expect(page).to have_content("can't be blank")
   end
 
@@ -101,10 +106,11 @@ feature "Creating a new user" do
     within(".actions") do
       click_button "Sign up"
     end
+
     expect(page).to have_content("6 characters minimum")
   end
 
-  scenario "requires a password to be 6 characters or more" do
+  scenario "requires a password to match password confirmation" do
     visit "/users/sign_up"
     fill_in "Email", with: "syxrailsdev@gmail.com"
     fill_in "User name", with: "bobby"
@@ -114,6 +120,7 @@ feature "Creating a new user" do
     within(".actions") do
       click_button "Sign up"
     end
+
     expect(page).to have_content("doesn't match Password")
   end
 end

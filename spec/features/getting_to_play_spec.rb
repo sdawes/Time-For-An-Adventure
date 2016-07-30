@@ -3,8 +3,8 @@ require 'rails_helper'
 feature "Getting to play the adventure" do
 
   scenario "Trying to play the game, but not logged in" do
-    adventure = FactoryGirl.create(:adventure)
-    chapter_1 = FactoryGirl.create(:chapter, description: "chapter 1", adventure_id: adventure.id)
+    adventure = create(:adventure)
+    chapter_1 = create(:chapter, description: "chapter 1", adventure_id: adventure.id)
 
     visit "/"
     click_link "Makers"
@@ -14,8 +14,8 @@ feature "Getting to play the adventure" do
   end
 
   scenario "Redirecting to the play page after signing up" do
-    adventure = FactoryGirl.create(:adventure)
-    chapter_1 = FactoryGirl.create(:chapter, description: "chapter 1", adventure_id: adventure.id)
+    adventure = create(:adventure)
+    chapter_1 = create(:chapter, description: "chapter 1", adventure_id: adventure.id)
 
     visit "/"
     click_link "Makers"
