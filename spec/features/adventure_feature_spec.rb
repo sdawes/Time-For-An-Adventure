@@ -17,15 +17,17 @@ feature "adventures" do
     expect(page).to have_content "Synopsis"
   end
 
-  scenario "User can't see the first chapter unless logged in" do
+  scenario "User can see the first chapter logged in" do
+    user = FactoryGirl.create(:user)
     adventure = create(:adventure)
     chapter = create(:chapter, adventure_id: adventure.id)
-
+    login_as(user)
+    
     visit "/"
     click_link "Makers"
     click_button "Play"
-    expect(page).not_to have_content("Chapter 1")
-    expect(current_path).to eq "/users/sign_up"
-    expect(page).to have_content "Sign up"
+
+    expect(page).to have_content("Chapter 1")
+    expect(current_path).to eq "/adventures/#{adventure.id}/chapters/#{chapter.id}"
   end
 end
