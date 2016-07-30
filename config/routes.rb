@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :adventures do
     resources :chapters
+    get '/design', to: 'adventures#design'
   end
 
 end
