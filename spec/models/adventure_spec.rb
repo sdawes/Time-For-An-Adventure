@@ -2,10 +2,13 @@ require "spec_helper"
 
 describe Adventure, type: :model do
 
-  scenario "adventures have a unique title" do
-    Adventure.create(title: "Hello")
-    new_adventure = Adventure.new(title: "Hello")
-    expect(new_adventure).to have(1).error_on(:title)
-    expect(new_adventure).not_to be_valid
+  it { should validate_presence_of(:title) }
+
+  it { should validate_uniqueness_of(:title) }
+
+  it { should validate_presence_of(:synopsis) }
+
+  scenario "adventure can be created" do
+    expect{create( :adventure, title: "Hello", synopsis: "once upon a time" )}.to change{Adventure.count}.by(1)
   end
 end

@@ -8,6 +8,6 @@ describe "adventures/show.html.erb" do
 
       render
 
-      expect(rendered).to have_content 'Synopsis'
+      expect(rendered).to have_content "Synopsis"
   end
 end

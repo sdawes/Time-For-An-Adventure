@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726131802) do
+ActiveRecord::Schema.define(version: 20160729114048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160726131802) do
   end
 
   create_table "choices", force: :cascade do |t|
-    t.string   "option"
+    t.string   "option",               null: false
     t.integer  "resulting_chapter_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false

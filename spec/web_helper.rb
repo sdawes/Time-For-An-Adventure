@@ -1,4 +1,4 @@
-def sign_in_with(user)
+def log_in_with(user)
   visit '/'
 
   click_link 'Log in'
