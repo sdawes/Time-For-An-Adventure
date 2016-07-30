@@ -9,7 +9,7 @@
       <%= @adventure.synopsis %>
     </div>
     <div class="form_play">
-      <%= link_to "Play", "/adventures/#{@adventure.id}/chapters/#{@first_chapter.id}", class: "play_button"%>
+      <%= link_to "Play", adventure_chapter_path(@adventure, @first_chapter), class: "play_button"%>
     </div>
   </body>
 </html>
