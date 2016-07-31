@@ -23,7 +23,7 @@ feature "User authentication" do
 
     log_in_with(user)
 
-    expect(page).to have_content("Signed in successfully.")
+
     expect(page).to_not have_content("Sign up")
     expect(page).to have_link("Log out")
   end
@@ -35,7 +35,8 @@ feature "User authentication" do
 
     click_link "Log out"
 
-    expect(page).to have_content("Signed out successfully")
+    expect(page).to have_link("Log in")
+    expect(page).to have_link("Sign up")
   end
 end
 
@@ -56,7 +57,7 @@ feature "User cannot sign up" do
 
   scenario "passwords do not match" do
     sign_up("username", "email@email.com", "password", "different password")
-    
+
     expect(page).to have_content("Password confirmation doesn't match Password")
   end
 end
