@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= form_tag adventure_chapter_choices_path do %>
+     <% @choices.each do |choice| %>
+       <%= fields_for 'choices[]', choice do |choice| %>
+
+         <div class="field">
+           <%= choice.label :option %><br>
+           <%= choice.text_field :option %>
+         </div>
+
+       <% end %>
+     <% end %>
+     <div class="actions">
+       <%= submit_tag %>
+     </div>
+    <% end %>
+  </body>
+</html>

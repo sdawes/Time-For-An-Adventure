@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <%= form_for [@adventure, @chapter] do |form| %>
+    <!-- <%= form_for [@adventure, @chapter] do |form| %>
       <%= form.label :description %>
       <%= form.text_area :description %>
       <%= fields_for @choice1 do |choice_form| %>
@@ -17,6 +17,12 @@
         <%= choice_form.text_field :option %>
       <% end %>
       <%= form.button :submit %>
+    <% end %> -->
+    <%= form_for [@adventure, @chapter, @choice] do |f| %>
+      <%= f.fields_for :choice, [Book.new]*2 do |choice| %>
+        <%= choice.text_field :option %>
+      <% end %>
+    <%= f.submit %>
     <% end %>
   </body>
 </html>

@@ -14,7 +14,8 @@ class AdventuresController < ApplicationController
 
   def create
     @adventure = Adventure.create(adventure_params)
-    redirect_to adventure_design_path(@adventure.id)
+    @adventure_id = @adventure.id
+    redirect_to adventure_design_path(@adventure_id)
   end
 
   def design
@@ -22,12 +23,6 @@ class AdventuresController < ApplicationController
     @adventure_id = @adventure.id
   end
 
-  def content
-    @adventure = Adventure.find(params[:adventure_id])
-    @chapter = Chapter.new
-    @choice1 = Choice.new
-    @choice2 = Choice.new
-  end
 
   private
 
