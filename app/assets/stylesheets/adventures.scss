@@ -27,31 +27,42 @@
 }
 
 .adventure {
+  margin: 2%;
   display: flex;
-  text-align: center;
-  width: 300px;
-  height: 200px;
-  background-color: #e9e8e8;
-  margin: 1%;
-  // border: 1px solid purple;
+  flex-direction: column;
+  height: 260px;
+  width: 280px;
+  background-color: white;
   border-radius: 15px;
-}
-
-.adventure:hover {
-  background-color: #8b0407;
+  // border: 1px solid green;
 }
 
 .adventure_title {
-  width: 300px;
-  padding: 3% 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
   font-family: 'Indie Flower', cursive;
   font-size: 1.2em;
   text-decoration: none;
-  color: white;
+  color: black;
   border-radius: 15px 15px 0 0;
-  background-color: #333333;
-  height: 20%;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 10.8em;
+  margin-bottom: -10.8em;
 }
+
+.adventure_image {
+  text-align: center;
+  width: 100%;
+  height: 180px;
+  background-color: #e9e8e8;
+  // border: 1px solid yellow;
+}
+
+
 
 // ================== play ================
 
@@ -101,7 +112,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px dashed orange;
   }
 
   #main_logo {
@@ -109,6 +119,7 @@
     height: auto;
     width: 70%;
   }
+
 
 }
 
