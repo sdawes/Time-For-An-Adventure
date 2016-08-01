@@ -14,8 +14,8 @@ feature "Creating a new user" do
     within(".actions") do
       click_button "Sign up"
     end
-    
-    expect(page).to have_content "Welcome! You have signed up successfully"
+
+    expect(page).to have_content "Log out"
   end
 
   xscenario "html validation requires a user name to successfully create an account(selenium test)", js: true do
