@@ -3,8 +3,18 @@ class ChaptersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-      @chapter = Chapter.find(params[:id])
-      @choices = Choice.where(chapter_id: "#{@chapter.id}")
+    @adventure = Adventure.find(params[:adventure_id])
+
+    @chapter = Chapter.find(params[:id])
+
+    @choices = Choice.where(chapter_id: @chapter.id)
+
+    @chapters = []
+
+    @choices.each do |choice|
+      @chapters << [choice, Chapter.where(parent_choice_id: choice.id).first]
+    end
+
   end
 
   def new

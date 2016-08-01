@@ -37,13 +37,21 @@ choices = ["Board coach A - the quiet coach.",
            "Follow the man towards the river."]
 
 
-Adventure.create(title: adventure, synopsis: synopsis)
+adventure = Adventure.create(title: adventure, synopsis: synopsis)
 
-
-chapters.each do |chapter|
-  adventure = Adventure.where(title: "The midnight train to Bristol").first
-  Chapter.create(description: chapter, adventure_id: adventure.id )
-end
+adventure = Adventure.where(title: "The midnight train to Bristol").first
+Chapter.create(description: chapters[0], adventure_id: adventure.id)
+Chapter.create(description: chapters[1], adventure_id: adventure.id, parent_choice_id: 1)
+Chapter.create(description: chapters[2], adventure_id: adventure.id, parent_choice_id: 2)
+Chapter.create(description: chapters[3], adventure_id: adventure.id, parent_choice_id: 3)
+Chapter.create(description: chapters[4], adventure_id: adventure.id, parent_choice_id: 4)
+Chapter.create(description: chapters[5], adventure_id: adventure.id, parent_choice_id: 5)
+Chapter.create(description: chapters[6], adventure_id: adventure.id, parent_choice_id: 6)
+Chapter.create(description: chapters[7], adventure_id: adventure.id, parent_choice_id: 7)
+Chapter.create(description: chapters[8], adventure_id: adventure.id, parent_choice_id: 8)
+Chapter.create(description: chapters[9], adventure_id: adventure.id, parent_choice_id: 9)
+Chapter.create(description: chapters[10], adventure_id: adventure.id, parent_choice_id: 10)
+Chapter.create(description: chapters[11], adventure_id: adventure.id, parent_choice_id: 11)
 
 Choice.create(option: choices[0], chapter_id: 1)
 Choice.create(option: choices[1], chapter_id: 1)
@@ -55,5 +63,5 @@ Choice.create(option: choices[6], chapter_id: 5)
 Choice.create(option: choices[6], chapter_id: 6)
 Choice.create(option: choices[7], chapter_id: 5)
 Choice.create(option: choices[7], chapter_id: 6)
-Choice.create(option: choices[8],  chapter_id: 8)
-Choice.create(option: choices[9],  chapter_id: 8)
+Choice.create(option: choices[8], chapter_id: 8)
+Choice.create(option: choices[9], chapter_id: 8)
