@@ -19,7 +19,7 @@
       <%= form.button :submit %>
     <% end %> -->
     <%= form_for [@adventure, @chapter, @choice] do |f| %>
-      <%= f.fields_for :choice, [Book.new]*2 do |choice| %>
+      <%= f.fields_for :choice, [Choice.new] do |choice| %>
         <%= choice.text_field :option %>
       <% end %>
     <%= f.submit %>

@@ -5,20 +5,12 @@
     <title></title>
   </head>
   <body>
-    <%= form_tag adventure_chapter_choices_path do %>
-     <% @choices.each do |choice| %>
-       <%= fields_for 'choices[]', choice do |choice| %>
-
-         <div class="field">
-           <%= choice.label :option %><br>
-           <%= choice.text_field :option %>
-         </div>
-
-       <% end %>
-     <% end %>
-     <div class="actions">
-       <%= submit_tag %>
-     </div>
+    <%= form_tag bulk_adventure_chapter_choices_path([@adventure, @chapter]) do %>
+      <% @choices.length.times do |index| %>
+        <%= label_tag('Option') %>
+        <%= text_field_tag("choices[option_#{ index }]") %>
+      <% end %>
+      <%= submit_tag "Submit" %>
     <% end %>
   </body>
 </html>
