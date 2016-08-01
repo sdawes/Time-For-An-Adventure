@@ -2,13 +2,13 @@ require "rails_helper"
 
 describe Choice, type: :model do
 
-  it { should validate_presence_of(:option) }
+  xit { should validate_presence_of(:option) }
 
-  it { should validate_presence_of(:resulting_chapter_id) }
+  xit { should validate_presence_of(:resulting_chapter_id) }
 
-  it { should validate_presence_of(:chapter_id) }
+  xit { should validate_presence_of(:chapter_id) }
 
-  scenario "choice can be created" do
+  xscenario "choice can be created" do
     adventure = create(:adventure)
     chapter = create(:chapter, adventure_id: adventure.id)
     resulting_chapter = create(:chapter, adventure_id: adventure.id)

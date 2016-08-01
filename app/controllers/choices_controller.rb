@@ -4,32 +4,28 @@ class ChoicesController < ApplicationController
   def new
     @adventure = Adventure.find(params[:adventure_id])
     @chapter = Chapter.find(params[:chapter_id])
-    @choices = []
-    NUMBER_OF_CHOICES.times do
-      @choices << Choice.new
-    end
+    @choice = Choice.new
   end
 
   def create
-    params["choice"].each do |choice|
-        Choice.create(choice_params)
-    end
+    @adventure = Adventure.find(params[:adventure_id])
+    redirect_to new_adventure_chapter_path(@adventure)
   end
 
-  def bulk_create
-    choice_params.values.each do |choice_value|
-      choice = Choice.new
-      choice.chapter_id = params[:chapter_id]
-      choice.option = choice_value
-      choice.save
-    end
-    @adventure = Adventure.find(params[:adventure_id])
-    redirect_to adventure_design_path(@adventure)
-  end
+  # def bulk_create
+  #   choice_params.values.each do |choice_value|
+  #     choice = Choice.new
+  #     choice.chapter_id = params[:chapter_id]
+  #     choice.option = choice_value
+  #     choice.save
+  #   end
+  #   @adventure = Adventure.find(params[:adventure_id])
+  #   redirect_to adventure_design_path(@adventure)
+  # end
 
   private
 
   def choice_params
-    params.require(:choices).permit(:option_0, :option_1)
+    params.require(:choice).permit(:option)
   end
 end

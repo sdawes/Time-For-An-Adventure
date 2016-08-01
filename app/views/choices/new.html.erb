@@ -5,12 +5,11 @@
     <title></title>
   </head>
   <body>
-    <%= form_tag bulk_adventure_chapter_choices_path([@adventure, @chapter]) do %>
-      <% @choices.length.times do |index| %>
-        <%= label_tag('Option') %>
-        <%= text_field_tag("choices[option_#{ index }]") %>
-      <% end %>
-      <%= submit_tag "Submit" %>
+    <h1>Add a Choice</h1>
+    <%= form_for [@adventure, @chapter, @choice] do |form| %>
+      <%= form.label :option %>
+      <%= form.text_area :option %>
+      <%= form.button :submit %>
     <% end %>
   </body>
 </html>

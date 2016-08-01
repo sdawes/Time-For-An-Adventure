@@ -30,34 +30,83 @@ feature "Creating Adventure" do
     expect(page).to have_link "Start"
   end
 
-  # scenario "user can create a chapter" do
-  #   user = create(:user)
-  #   log_in_with(user)
-  #
-  #   click_link "Create"
-  #   fill_in "Title", with: "Romeo and Juliet"
-  #   fill_in "Synopsis", with: "The only title I could think of"
-  #   click_button "submit"
-  #
-  #   click_link "Start"
-  #   expect(page).to have_content "Description"
-  # end
-  #
-  # scenario "user can add to choices to a chapter" do
-  #   user = create(:user)
-  #   log_in_with(user)
-  #
-  #   click_link "Create"
-  #   fill_in "Title", with: "Romeo and Juliet"
-  #   fill_in "Synopsis", with: "The only title I could think of"
-  #   click_button "submit"
-  #
-  #   click_link "Start"
-  #
-  #   fill_in "Description", with: "Barbara Ann"
-  #   click_button "submit"
-  #
-  #   expect(page).to have_content "Option 1"
-  #   expect(page).to have_content "Option 2"
-  # end
+  scenario "user can create a chapter" do
+    user = create(:user)
+    log_in_with(user)
+
+    click_link "Create"
+    fill_in "Title", with: "Romeo and Juliet"
+    fill_in "Synopsis", with: "The only title I could think of"
+    click_button "submit"
+
+    click_link "Start"
+    expect(page).to have_content "Description"
+  end
+
+  scenario "user can create the first chapter" do
+    user = create(:user)
+    log_in_with(user)
+
+    click_link "Create"
+    fill_in "Title", with: "Romeo and Juliet"
+    fill_in "Synopsis", with: "The only title I could think of"
+    click_button "submit"
+
+    click_link "Start"
+    expect(page).to have_content "Add a Chapter"
+  end
+
+  scenario "user can view the first chapter on the main page" do
+    user = create(:user)
+    log_in_with(user)
+
+    click_link "Create"
+    fill_in "Title", with: "Romeo and Juliet"
+    fill_in "Synopsis", with: "The only title I could think of"
+    click_button "submit"
+
+    click_link "Start"
+    fill_in "Description", with: "I really hope this works"
+    click_button "submit"
+
+    expect(page).to have_content "I really hope this works"
+    expect(page).to have_content "Romeo and Juliet"
+  end
+
+
+  scenario "user can add choices to a chapter" do
+    user = create(:user)
+    log_in_with(user)
+
+    click_link "Create"
+    fill_in "Title", with: "Romeo and Juliet"
+    fill_in "Synopsis", with: "The only title I could think of"
+    click_button "submit"
+
+    click_link "Start"
+    fill_in "Description", with: "I really hope this works"
+    click_button "submit"
+    click_link "Add choice"
+
+    expect(page).to have_content "Add a Choice"
+  end
+
+  scenario "user has to create a chapter when a choice is created" do
+    user = create(:user)
+    log_in_with(user)
+
+    click_link "Create"
+    fill_in "Title", with: "Romeo and Juliet"
+    fill_in "Synopsis", with: "The only title I could think of"
+    click_button "submit"
+
+    click_link "Start"
+    fill_in "Description", with: "I really hope this works"
+    click_button "submit"
+    click_link "Add choice"
+
+    fill_in "Option", with: "it did!"
+    click_button "submit"
+    expect(page).to have_content "Add a Chapter"
+  end
 end

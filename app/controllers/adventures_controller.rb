@@ -20,6 +20,7 @@ class AdventuresController < ApplicationController
 
   def design
     @adventure = Adventure.find(params[:adventure_id])
+    @chapters = Chapter.where(adventure_id: @adventure.id)
     @adventure_id = @adventure.id
   end
 

@@ -14,12 +14,21 @@ class ChaptersController < ApplicationController
 
   def create
     @adventure = Adventure.find(params[:adventure_id])
-    @chapter = Chapter.new(chapter_params)
-    @chapter.adventure_id = @adventure.id
-    @chapter.save
-    @adventure_id = @adventure.id
-    @chapter_id = @chapter.id
-    redirect_to new_adventure_chapter_choice_path(@adventure_id, @chapter_id)
+
+    if Chapter.where(adventure_id: params[:adventure_id]).empty?
+      @choice = Choice.create(option: "start")
+      @chapter = Chapter.new(chapter_params)
+      @chapter.adventure_id = @adventure.id
+      @chapter.parent_choice_id = @choice.id
+      @chapter.save
+    else
+      @choice = Choice.all.last
+      @chapter = Chapter.new(chapter_params)
+      @chapter.adventure_id = @adventure.id
+      @chapter.parent_choice_id = @choice.id
+      @chapter.save
+    end
+    redirect_to adventure_design_path
   end
 
   private
