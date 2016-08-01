@@ -51,7 +51,7 @@ Chapter.create(description: chapters[7], adventure_id: adventure.id, parent_choi
 Chapter.create(description: chapters[8], adventure_id: adventure.id, parent_choice_id: 8)
 Chapter.create(description: chapters[9], adventure_id: adventure.id, parent_choice_id: 9)
 Chapter.create(description: chapters[10], adventure_id: adventure.id, parent_choice_id: 10)
-Chapter.create(description: chapters[11], adventure_id: adventure.id, parent_choice_id: 11)
+
 
 Choice.create(option: choices[0], chapter_id: 1)
 Choice.create(option: choices[1], chapter_id: 1)
