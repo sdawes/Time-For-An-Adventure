@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create a new Adventure</title>
+  </head>
+  <body>
+    <%= form_for Adventure.new do |form| %>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+      <%= form.label :synopsis %>
+      <%= form.text_field :synopsis %>
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+      <%= form.button :submit, value: "Create Adventure" %>
+    <% end %>
+  </body>
+</html>

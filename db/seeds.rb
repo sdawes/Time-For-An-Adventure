@@ -37,23 +37,32 @@ choices = ["Board coach A - the quiet coach.",
            "Follow the man towards the river."]
 
 
+
 Adventure.create(title: adventure, synopsis: synopsis, image: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
 
+adventure = Adventure.where(title: "The midnight train to Bristol").first
+Chapter.create(description: chapters[0], adventure_id: adventure.id)
+Chapter.create(description: chapters[1], adventure_id: adventure.id, parent_choice_id: 1)
+Chapter.create(description: chapters[2], adventure_id: adventure.id, parent_choice_id: 2)
+Chapter.create(description: chapters[3], adventure_id: adventure.id, parent_choice_id: 3)
+Chapter.create(description: chapters[4], adventure_id: adventure.id, parent_choice_id: 4)
+Chapter.create(description: chapters[5], adventure_id: adventure.id, parent_choice_id: 5)
+Chapter.create(description: chapters[6], adventure_id: adventure.id, parent_choice_id: 6)
+Chapter.create(description: chapters[7], adventure_id: adventure.id, parent_choice_id: 7)
+Chapter.create(description: chapters[8], adventure_id: adventure.id, parent_choice_id: 8)
+Chapter.create(description: chapters[9], adventure_id: adventure.id, parent_choice_id: 9)
+Chapter.create(description: chapters[10], adventure_id: adventure.id, parent_choice_id: 10)
 
-chapters.each do |chapter|
-  adventure = Adventure.where(title: "The midnight train to Bristol").first
-  Chapter.create(description: chapter, adventure_id: adventure.id )
-end
 
-Choice.create(option: choices[0], resulting_chapter_id: 2, chapter_id: 1)
-Choice.create(option: choices[1], resulting_chapter_id: 3, chapter_id: 1)
-Choice.create(option: choices[2], resulting_chapter_id: 4, chapter_id: 2)
-Choice.create(option: choices[3], resulting_chapter_id: 5, chapter_id: 2)
-Choice.create(option: choices[4], resulting_chapter_id: 6, chapter_id: 3)
-Choice.create(option: choices[5], resulting_chapter_id: 7, chapter_id: 3)
-Choice.create(option: choices[6], resulting_chapter_id: 8, chapter_id: 5)
-Choice.create(option: choices[6], resulting_chapter_id: 8, chapter_id: 6)
-Choice.create(option: choices[7], resulting_chapter_id: 9, chapter_id: 5)
-Choice.create(option: choices[7], resulting_chapter_id: 9, chapter_id: 6)
-Choice.create(option: choices[8], resulting_chapter_id: 10, chapter_id: 8)
-Choice.create(option: choices[9], resulting_chapter_id: 11, chapter_id: 8)
+Choice.create(option: choices[0], chapter_id: 1)
+Choice.create(option: choices[1], chapter_id: 1)
+Choice.create(option: choices[2], chapter_id: 2)
+Choice.create(option: choices[3], chapter_id: 2)
+Choice.create(option: choices[4], chapter_id: 3)
+Choice.create(option: choices[5], chapter_id: 3)
+Choice.create(option: choices[6], chapter_id: 5)
+Choice.create(option: choices[6], chapter_id: 6)
+Choice.create(option: choices[7], chapter_id: 5)
+Choice.create(option: choices[7], chapter_id: 6)
+Choice.create(option: choices[8], chapter_id: 8)
+Choice.create(option: choices[9], chapter_id: 8)

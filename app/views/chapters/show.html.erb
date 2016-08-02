@@ -10,8 +10,8 @@
     </div>
     <br>
     <div class="choices_container">
-      <% @choices.each do |choice| %>
-        <%= link_to "#{choice.option}", "/adventures/#{@chapter.adventure_id}/chapters/#{choice.resulting_chapter_id}",id:"choice_button", class:"button" %>
+      <% @chapters.each do |pair| %>
+        <%= link_to "#{pair[0].option}", adventure_chapter_path(@adventure.id, pair[1].id), id:"choice_button", class:"button" %>
       <% end %>
     </div>
   </body>
