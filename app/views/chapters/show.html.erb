@@ -11,7 +11,7 @@
     <br>
     <div class="choices_container">
       <% @chapters.each do |pair| %>
-        <%= link_to "#{pair[0].option}", adventure_chapter_path(@adventure.id, pair[1].id) %>
+        <%= link_to "#{pair[0].option}", adventure_chapter_path(@adventure.id, pair[1].id), id:"choice_button", class:"button" %>
       <% end %>
     </div>
   </body>

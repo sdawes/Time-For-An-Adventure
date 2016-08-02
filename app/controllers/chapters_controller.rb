@@ -27,17 +27,13 @@ class ChaptersController < ApplicationController
 
     if Chapter.where(adventure_id: params[:adventure_id]).empty?
       @choice = Choice.create(option: "start")
-      @chapter = Chapter.new(chapter_params)
-      @chapter.adventure_id = @adventure.id
-      @chapter.parent_choice_id = @choice.id
-      @chapter.save
     else
       @choice = Choice.all.last
+    end
       @chapter = Chapter.new(chapter_params)
       @chapter.adventure_id = @adventure.id
       @chapter.parent_choice_id = @choice.id
       @chapter.save
-    end
     redirect_to adventure_design_path
   end
 
