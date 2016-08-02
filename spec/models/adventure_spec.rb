@@ -42,14 +42,15 @@ describe Adventure, type: :model do
     choice    = Choice.create(option: '')
     adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
     chapter   = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice.id)
-    p '==========='
-    p adventure
 
-    expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter.id}</a></li></ul>"
+    expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'></a></li></ul>"
   end
 
-  xscenario "adventure#traverse_tree can create a nested list with one head and one chapter" do
-    adventure  = Adventure.create(title: 'Stanger Things', synopsis: 'Once upon a time...')
+  scenario "adventure#traverse_tree can create a nested list with one head and one chapter" do
+    choice    = Choice.create(option: '')
+    adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
+    chapter   = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice.id)
+
     chapter1   = Chapter.create(description: 'hello world', adventure_id: adventure.id)
     chapter2   = Chapter.create(description: 'hello world', adventure_id: adventure.id)
     choice     = Choice.create(option: 'choice 1', chapter_id: chapter1.id, resulting_chapter_id: chapter2.id)

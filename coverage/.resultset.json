@@ -97,6 +97,9 @@
         null,
         null,
         null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/MichaelLo/projects/TFAA/app/models/choice.rb": [
@@ -251,6 +254,6 @@
         0
       ]
     },
-    "timestamp": 1470154862
+    "timestamp": 1470155071
   }
 }
