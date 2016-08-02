@@ -10,11 +10,8 @@ Rails.application.routes.draw do
     get "/design", to: "adventures#design"
 
     resources :chapters do
-      resources :choices do
-        collection do
-          post "/bulk", to: 'choices#bulk_create'
-        end
-      end
+      post "/destroy_children_chapters", to: "chapters#bulk_destroy"
+      resources :choices
     end
 
   end

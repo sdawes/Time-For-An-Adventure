@@ -24,6 +24,7 @@ feature "Creating Adventure" do
     click_link "Create"
     fill_in "Title", with: "Romeo and Juliet"
     fill_in "Synopsis", with: "The only title I could think of"
+    attach_file 'Image', "/Users/jojograndjojo/Projects2/TFAA/lib/assets/owl jolson.jpeg"
     click_button "submit"
 
     expect(page).to have_content "Design your Adventure"
@@ -37,6 +38,8 @@ feature "Creating Adventure" do
     click_link "Create"
     fill_in "Title", with: "Romeo and Juliet"
     fill_in "Synopsis", with: "The only title I could think of"
+    attach_file 'Image', "/Users/jojograndjojo/Projects2/TFAA/lib/assets/owl jolson.jpeg"
+
     click_button "submit"
 
     click_link "Start"
@@ -50,6 +53,7 @@ feature "Creating Adventure" do
     click_link "Create"
     fill_in "Title", with: "Romeo and Juliet"
     fill_in "Synopsis", with: "The only title I could think of"
+    attach_file 'Image', "/Users/jojograndjojo/Projects2/TFAA/lib/assets/owl jolson.jpeg"
     click_button "submit"
 
     click_link "Start"
@@ -63,6 +67,8 @@ feature "Creating Adventure" do
     click_link "Create"
     fill_in "Title", with: "Romeo and Juliet"
     fill_in "Synopsis", with: "The only title I could think of"
+    attach_file 'Image', "/Users/jojograndjojo/Projects2/TFAA/lib/assets/owl jolson.jpeg"
+
     click_button "submit"
 
     click_link "Start"
@@ -81,6 +87,8 @@ feature "Creating Adventure" do
     click_link "Create"
     fill_in "Title", with: "Romeo and Juliet"
     fill_in "Synopsis", with: "The only title I could think of"
+    attach_file 'Image', "/Users/jojograndjojo/Projects2/TFAA/lib/assets/owl jolson.jpeg"
+
     click_button "submit"
 
     click_link "Start"
@@ -98,6 +106,8 @@ feature "Creating Adventure" do
     click_link "Create"
     fill_in "Title", with: "Romeo and Juliet"
     fill_in "Synopsis", with: "The only title I could think of"
+    attach_file 'Image', "/Users/jojograndjojo/Projects2/TFAA/lib/assets/owl jolson.jpeg"
+
     click_button "submit"
 
     click_link "Start"
