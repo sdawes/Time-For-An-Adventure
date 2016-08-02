@@ -38,33 +38,33 @@ describe Adventure, type: :model do
     expect{create( :adventure, title: "gif", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + "#{gif}", 'image/jpeg') )}.to change{Adventure.count}.by(1)
   end
 
-  scenario "adventure#traverse_tree can create a nested list for one chapter" do
+  scenario "adventure#create_tree can create a nested list for one chapter" do
     choice    = Choice.create(option: '')
     adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
     chapter   = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice.id)
 
-    expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'></a></li></ul>"
+    expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter.id}</a></li></ul>"
   end
 
-  scenario "adventure#traverse_tree can create a nested list with one head and one chapter" do
-    choice    = Choice.create(option: '')
+  scenario "adventure#create_tree can create a nested list with one parent and one child" do
+    choice1    = Choice.create(option: '')
     adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
-    chapter   = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice.id)
+    chapter1  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice1.id)
+    choice2   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
+    chapter2  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice2.id)
 
-    chapter1   = Chapter.create(description: 'hello world', adventure_id: adventure.id)
-    chapter2   = Chapter.create(description: 'hello world', adventure_id: adventure.id)
-    choice     = Choice.create(option: 'choice 1', chapter_id: chapter1.id, resulting_chapter_id: chapter2.id)
 
     expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter1.id}</a><ul><li><a href='#'>Chapter #{chapter2.id}</a></li></ul></li></ul>"
   end
 
-  xscenario "adventure#tree can create a nested list with one head and two chapters" do
-    adventure  = Adventure.create(title: 'Stanger Things', synopsis: 'Once upon a time...')
-    chapter1   = Chapter.create(description: 'hello world', adventure_id: adventure.id)
-    chapter2   = Chapter.create(description: 'hello world', adventure_id: adventure.id)
-    chapter3   = Chapter.create(description: 'hello world', adventure_id: adventure.id)
-    choice1    = Choice.create(option: 'choice 1', chapter_id: chapter1.id, resulting_chapter_id: chapter2.id)
-    choice2    = Choice.create(option: 'choice 1', chapter_id: chapter1.id, resulting_chapter_id: chapter3.id)
+  scenario "adventure#create_tree can create a nested list with one head and two chapters" do
+    choice1   = Choice.create(option: '')
+    adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
+    chapter1  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice1.id)
+    choice2   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
+    chapter2  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice2.id)
+    choice3   = Choice.create(option: 'choice 1', chapter_id: chapter2.id)
+    chapter3  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice3.id)
 
     expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter1.id}</a><ul><li><a href='#'>Chapter #{chapter2.id}</a></li><li><a href='#'>Chapter #{chapter3.id}</a></li></ul></li></ul>"
   end

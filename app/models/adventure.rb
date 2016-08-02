@@ -13,8 +13,8 @@ class Adventure < ApplicationRecord
   def traverse_tree(chapter_node)
     html = ''
     html += "<ul>" if first_chapter(chapter_node)
-    html += "<li><a href='#'></a>"
-    moreChoices?(chapter_node) ? html += "<ul>" : html += "</li>"
+    html += "<li><a href='#'>Chapter #{chapter_node.id}</a>"
+    moreChoices?(chapter_node) ? html += "<1ul>" : html += "</li>"
 
     chapter_node.choices.each do |choice|
       next_chapter = Chapter.where(parent_choice_id: choice.id).first
@@ -54,14 +54,16 @@ class Adventure < ApplicationRecord
 
   # checks a chapter does not have resulting chapters
   def moreChoices?(check_chapter)
+    p '==========='
+    p self
     if (self.choices.each do |choice| return true if check_chapter.id === choice.chapter_id end) === true
       return true
     else
+      p 'Hello World'
       return false
     end
   end
 
 end
 
-
-# html += "<li><a href='/adventures/" + "#{chapter_node.adventure_id}" + "/chapters/#{chapter_node.id}/choices/new'></a>"
+# html += "<li><a href='/adventures/" + "#{chapter_node.adventure_id}" + "/chapters/#{chapter_node.id}/choices/new'> Chapter #{chapter_node.id}</a>"
