@@ -102,6 +102,31 @@
 
 }
 
+// ================== create an adventure ================
+
+.form_title_create {
+  width: 325px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  border-radius: 15px 15px 0 0;
+  background-color: #3a4d58;
+  color: white;
+}
+
+#small_log_in_btn_create {
+  margin: 5px 5px 25px 5px;
+  padding: 10px;
+  border-radius: 13px;
+  border: none;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-weight: 200;
+  text-decoration: none;
+  background-color: #3a4d58;
+  width: 100px;
+}
+
 // ================== media queries ================
 
 @media screen and (max-width: 670px) {
