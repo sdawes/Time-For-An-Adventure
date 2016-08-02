@@ -6,11 +6,10 @@
   </head>
   <body>
     <h1>Design your Adventure</h1>
-    <%= @adventure.title %><br>
+    <%= @adventure.title %>
+    <div class='tree'>
+      <%= @adventure.create_tree(@adventure.chapters.first).html_safe %>
+    </div>
     <%= link_to "Start", new_adventure_chapter_path(@adventure_id) %>
-    <% @chapters.each do |chapter| %>
-      <%= chapter.description %><br>
-      <%= link_to "Add choice", new_adventure_chapter_choice_path(@adventure_id, chapter.id) %><br>
-    <% end %>
   </body>
 </html>
