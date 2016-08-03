@@ -5,15 +5,9 @@ feature "Playing the adventure" do
   scenario "Viewing the first chapter with corresponding choices" do
     user = FactoryGirl.create(:user)
     adventure = FactoryGirl.create(:adventure)
-<<<<<<< HEAD
     chapter_1 = FactoryGirl.create(:chapter, description: "chapter 1", adventure_id: adventure.id)
     choice_1 = FactoryGirl.create(:choice, option: "choice 1", chapter_id: chapter_1.id)
     chapter_2 = FactoryGirl.create(:chapter, description: "chapter 2", adventure_id: adventure.id, parent_choice_id: choice_1.id)
-=======
-    chapter_1 = FactoryGirl.create(:chapter, description: "chapter 1", adventure_id: adventure.id, parent_choice_id: null)
-    choice_1 = FactoryGirl.create(:choice, option: "choice 1", chapter_id: chapter_1.id)
-    choice_2 = FactoryGirl.create(:choice, option: "choice 2", chapter_id: chapter_1.id)
->>>>>>> 288f0a490c3a7cb208f8235b4ee2250bfc6c0a7b
     login_as(user)
 
     visit "/"
@@ -47,16 +41,10 @@ feature "Playing the adventure" do
     user = FactoryGirl.create(:user)
     adventure = FactoryGirl.create(:adventure)
     chapter_1 = FactoryGirl.create(:chapter, description: "chapter 1", adventure_id: adventure.id)
-<<<<<<< HEAD
     choice_1 = FactoryGirl.create(:choice, option: "choice 1", chapter_id: chapter_1.id)
     chapter_2 = FactoryGirl.create(:chapter, description: "chapter 2", adventure_id: adventure.id, parent_choice_id: choice_1.id)
     choice_2 = FactoryGirl.create(:choice, option: "choice 2", chapter_id: chapter_2.id)
     chapter_3 = FactoryGirl.create(:chapter, description: "chapter 3", adventure_id: adventure.id, parent_choice_id: choice_2.id)
-=======
-    chapter_2 = FactoryGirl.create(:chapter, description: "chapter 2", adventure_id: adventure.id)
-    choice_1 = FactoryGirl.create(:choice, option: "choice 1", chapter_id: chapter_1.id)
-    choice_2 = FactoryGirl.create(:choice, option: "choice 2", chapter_id: chapter_2.id)
->>>>>>> 288f0a490c3a7cb208f8235b4ee2250bfc6c0a7b
     login_as(user)
 
     visit "/"
