@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
     get "/content", to: "adventures#content"
     get "/design", to: "adventures#design"
-
+    get "game_destroy" => "games#delete"
     resources :chapters do
       resources :choices do
         collection do

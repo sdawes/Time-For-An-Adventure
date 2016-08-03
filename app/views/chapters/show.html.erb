@@ -11,8 +11,9 @@
     <br>
     <div class="choices_container">
       <% @chapters.each do |pair| %>
-        <%= link_to "#{pair[0].option}", adventure_chapter_path(@adventure.id, pair[1].id), id:"choice_button", class:"button" %>
+        <%= link_to "#{pair[0].option}", adventure_chapter_path(params[:adventure_id], pair[1].id), id:"choice_button", class:"button" %>
       <% end %>
+      <%= link_to "Start Again", adventure_game_destroy_path(params[:adventure_id]), id:"choice_button", class:"button" %>
     </div>
   </body>
 </html>
