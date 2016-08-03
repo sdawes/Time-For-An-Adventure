@@ -13,9 +13,11 @@ class Adventure < ApplicationRecord
   def traverse_tree(chapter_node)
     html = ''
     html += "<ul>" if first_chapter(chapter_node)
-    html += "<li><a href='#'>Chapter #{chapter_node.id}</a>"
-    moreChoices?(chapter_node) ? html += "<1ul>" : html += "</li>"
-
+    html += "<li><a href='/adventures/" + "#{chapter_node.adventure_id}" + "/chapters/#{chapter_node.id}/choices/new'> Chapter #{chapter_node.id}</a>"
+    moreChoices?(chapter_node) ? html += "<ul>" : html += "</li>"
+    if chapter_node.parent_choice_id != nil
+      html += "</ul>" if end_of_row?(chapter_node)
+    end
     chapter_node.choices.each do |choice|
       next_chapter = Chapter.where(parent_choice_id: choice.id).first
       next_html = !!(next_chapter) ? traverse_tree(next_chapter) : "</ul></li>"
@@ -54,16 +56,47 @@ class Adventure < ApplicationRecord
 
   # checks a chapter does not have resulting chapters
   def moreChoices?(check_chapter)
-    p '==========='
-    p self
-    if (self.choices.each do |choice| return true if check_chapter.id === choice.chapter_id end) === true
-      return true
+    find_children_chapters(check_chapter, false) != []
+  end
+
+  def find_children_chapters(chapter, array_of_ids)
+    @choices = Choice.where(chapter_id: chapter.id)
+    find_chapters_from_choices(@choices, array_of_ids)
+  end
+
+  def find_chapters_from_choices(array_of_choices, array_of_ids)
+    chapters = []
+    if array_of_ids = false
+      array_of_choices.each do |choice|
+        chapters << Chapter.where(parent_choice_id: choice.id)
+      end
     else
-      p 'Hello World'
-      return false
+      array_of_choices.each do |choice|
+        chapters << Chapter.where(parent_choice_id: choice.id).pluck(:id)
+      end
     end
+    chapters.flatten
+  end
+
+  def end_of_row?(chapter)
+    choice_found = find_parent_choice(chapter)
+    parent_chapter = find_parent_chapter(choice_found)
+    children_chapter_ids = find_children_chapters(parent_chapter, true)
+    highest_chapter_id(children_chapter_ids, chapter)
+  end
+
+  def highest_chapter_id(children_chapter_ids, current_chapter)
+    children_chapter_ids.max === current_chapter.id
+  end
+
+
+  def find_parent_choice(chapter)
+    p chapter
+    Choice.find(chapter.parent_choice_id)
+  end
+
+  def find_parent_chapter(choice)
+    Chapter.find(choice.chapter_id)
   end
 
 end
-
-# html += "<li><a href='/adventures/" + "#{chapter_node.adventure_id}" + "/chapters/#{chapter_node.id}/choices/new'> Chapter #{chapter_node.id}</a>"

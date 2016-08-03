@@ -38,7 +38,7 @@ describe Adventure, type: :model do
     expect{create( :adventure, title: "gif", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + "#{gif}", 'image/jpeg') )}.to change{Adventure.count}.by(1)
   end
 
-  scenario "adventure#create_tree can create a nested list for one chapter" do
+  xscenario "adventure#create_tree can create a nested list for one chapter" do
     choice    = Choice.create(option: '')
     adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
     chapter   = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice.id)
@@ -46,7 +46,7 @@ describe Adventure, type: :model do
     expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter.id}</a></li></ul>"
   end
 
-  scenario "adventure#create_tree can create a nested list with one parent and one child" do
+  xscenario "adventure#create_tree can create a nested list with one parent and one child" do
     choice1    = Choice.create(option: '')
     adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
     chapter1  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice1.id)
@@ -57,70 +57,45 @@ describe Adventure, type: :model do
     expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter1.id}</a><ul><li><a href='#'>Chapter #{chapter2.id}</a></li></ul></li></ul>"
   end
 
-  scenario "adventure#create_tree can create a nested list with one head and two chapters" do
+  xscenario "adventure#create_tree can create a nested list with one head and two chapters" do
     choice1   = Choice.create(option: '')
     adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
     chapter1  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice1.id)
     choice2   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
     chapter2  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice2.id)
-    choice3   = Choice.create(option: 'choice 1', chapter_id: chapter2.id)
+    choice3   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
     chapter3  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice3.id)
 
     expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter1.id}</a><ul><li><a href='#'>Chapter #{chapter2.id}</a></li><li><a href='#'>Chapter #{chapter3.id}</a></li></ul></li></ul>"
   end
 
   xscenario "adventure#tree can create a nested list with one head and three chapters" do
-    adventure  = Adventure.create(title: 'Stanger Things', synopsis: 'Once upon a time...')
-    chapter1   = Chapter.create(description: 'hello 1', adventure_id: adventure.id)
-    chapter2   = Chapter.create(description: 'hello 2', adventure_id: adventure.id)
-    chapter3   = Chapter.create(description: 'hello 3', adventure_id: adventure.id)
-    chapter4   = Chapter.create(description: 'hello 4', adventure_id: adventure.id)
-
-    choicea1    = Choice.create(option: 'choice 1', chapter_id: chapter1.id, resulting_chapter_id: chapter2.id)
-    choicea2    = Choice.create(option: 'choice 2', chapter_id: chapter1.id, resulting_chapter_id: chapter3.id)
-    choicea3    = Choice.create(option: 'choice 3', chapter_id: chapter1.id, resulting_chapter_id: chapter4.id)
+    choice1   = Choice.create(option: '')
+    adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
+    chapter1  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice1.id)
+    choice2   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
+    chapter2  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice2.id)
+    choice3   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
+    chapter3  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice3.id)
+    choice4   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
+    chapter4  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice4.id)
 
     expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter1.id}</a><ul><li><a href='#'>Chapter #{chapter2.id}</a></li><li><a href='#'>Chapter #{chapter3.id}</a></li><li><a href='#'>Chapter #{chapter4.id}</a></li></ul></li></ul>"
   end
 
-  xscenario "adventure#tree can create a nested list with one parent and two children, each with 6 grandchildren" do
-    adventure  = Adventure.create(title: 'Stanger Things', synopsis: 'Once upon a time...')
-    chapter1   = Chapter.create(description: 'hello 1', adventure_id: adventure.id)
-    chapter2   = Chapter.create(description: 'hello 2', adventure_id: adventure.id)
-    chapter3   = Chapter.create(description: 'hello 3', adventure_id: adventure.id)
-    chapter4   = Chapter.create(description: 'hello 4', adventure_id: adventure.id)
-    chapter5   = Chapter.create(description: 'hello 5', adventure_id: adventure.id)
+  xscenario "adventure#tree can create a nested list with one parent, three children and with 1 grandchild" do
+    choice1   = Choice.create(option: '')
+    adventure = Adventure.create( title: "jpeg", synopsis: "once upon a time", image: Rack::Test::UploadedFile.new(Rails.root + jpeg = 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
+    chapter1  = Chapter.create(description: 'hello world1', adventure_id: adventure.id, parent_choice_id: choice1.id)
+    choice2   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
+    chapter2  = Chapter.create(description: 'hello world2', adventure_id: adventure.id, parent_choice_id: choice2.id)
+    choice3   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
+    chapter3  = Chapter.create(description: 'hello world3', adventure_id: adventure.id, parent_choice_id: choice3.id)
+    choice4   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
+    chapter4  = Chapter.create(description: 'hello world4', adventure_id: adventure.id, parent_choice_id: choice4.id)
+    choice5   = Choice.create(option: 'choice 1', chapter_id: chapter2.id)
+    chapter5  = Chapter.create(description: 'hello world5', adventure_id: adventure.id, parent_choice_id: choice5.id)
 
-    choicea1    = Choice.create(option: 'choice 1', chapter_id: chapter1.id, resulting_chapter_id: chapter2.id)
-    choicea2    = Choice.create(option: 'choice 2', chapter_id: chapter2.id, resulting_chapter_id: chapter3.id)
-    choicea3    = Choice.create(option: 'choice 3', chapter_id: chapter2.id, resulting_chapter_id: chapter4.id)
-    choicea4    = Choice.create(option: 'choice 3', chapter_id: chapter2.id, resulting_chapter_id: chapter5.id)
-
-    expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter1.id}</a><ul><li><a href='#'>Chapter #{chapter2.id}</a><ul><li><a href='#'>Chapter #{chapter3.id}</a></li><li><a href='#'>Chapter #{chapter4.id}</a></li><li><a href='#'>Chapter #{chapter5.id}</a></li></ul></li></ul></li></ul>"
-  end
-
-  xscenario "adventure#tree can create a nested list with one parent and two children, each with 6 grandchildren" do
-    adventure  = Adventure.create(title: 'Stanger Things', synopsis: 'Once upon a time...')
-    chapter1   = Chapter.create(description: 'hello 1', adventure_id: adventure.id)
-    chapter2   = Chapter.create(description: 'hello 2', adventure_id: adventure.id)
-    chapter3   = Chapter.create(description: 'hello 3', adventure_id: adventure.id)
-    chapter4   = Chapter.create(description: 'hello 4', adventure_id: adventure.id)
-    chapter5   = Chapter.create(description: 'hello 5', adventure_id: adventure.id)
-    chapter6   = Chapter.create(description: 'hello 6', adventure_id: adventure.id)
-    chapter7   = Chapter.create(description: 'hello 7', adventure_id: adventure.id)
-    chapter8   = Chapter.create(description: 'hello 8', adventure_id: adventure.id)
-    chapter9   = Chapter.create(description: 'hello 9', adventure_id: adventure.id)
-
-
-    choicea1    = Choice.create(option: 'choice 1', chapter_id: chapter1.id, resulting_chapter_id: chapter2.id)
-    choicea2    = Choice.create(option: 'choice 2', chapter_id: chapter1.id, resulting_chapter_id: chapter3.id)
-    choicea3    = Choice.create(option: 'choice 3', chapter_id: chapter2.id, resulting_chapter_id: chapter4.id)
-    choicea1    = Choice.create(option: 'choice 1', chapter_id: chapter2.id, resulting_chapter_id: chapter5.id)
-    choicea2    = Choice.create(option: 'choice 2', chapter_id: chapter2.id, resulting_chapter_id: chapter6.id)
-    choicea3    = Choice.create(option: 'choice 3', chapter_id: chapter3.id, resulting_chapter_id: chapter7.id)
-    choicea1    = Choice.create(option: 'choice 1', chapter_id: chapter3.id, resulting_chapter_id: chapter8.id)
-    choicea2    = Choice.create(option: 'choice 2', chapter_id: chapter3.id, resulting_chapter_id: chapter9.id)
-
-    expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter1.id}</a><ul><li><a href='#'>Chapter #{chapter2.id}</a><ul><li><a href='#'>Chapter #{chapter3.id}</a></li><li><a href='#'>Chapter #{chapter4.id}</a></li><li><a href='#'>Chapter #{chapter5.id}</a></li></ul></li><li><a href='#'>Chapter #{chapter6.id}</a><ul><li><a href='#'>Chapter #{chapter7.id}</a></li><li><a href='#'>Chapter #{chapter8.id}</a></li><li><a href='#'>Chapter #{chapter9.id}</a></li></ul></li></ul></li></ul>"
+    expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter1.id}</a><ul><li><a href='#'>Chapter #{chapter2.id}</a><ul><li><a href='#'>Chapter #{chapter5.id}</a></li></ul></li><li><a href='#'>Chapter #{chapter3.id}</a></li><li><a href='#'>Chapter #{chapter4.id}</a></li></ul></li></ul>"
   end
 end
