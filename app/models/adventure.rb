@@ -13,7 +13,7 @@ class Adventure < ApplicationRecord
   def traverse_tree(chapter_node)
     html = ''
     html += "<ul>" if first_chapter(chapter_node)
-    html += "<li><a href='/adventures/" + "#{chapter_node.adventure_id}" + "/chapters/#{chapter_node.id}/choices/new'> Chapter: #{first_3_words(chapter_node)}</a>"
+    html += "<li><a href='/adventures/" + "#{chapter_node.adventure_id}" + "/chapters/#{chapter_node.id}/choices/new'> #{first_3_words(chapter_node)}</a>"
     moreChoices?(chapter_node) ? html += "<ul>" : html += "</li>"
     if chapter_node.parent_choice_id != nil && !moreChoices?(chapter_node)
       html += "</ul>" if end_of_row?(chapter_node)
