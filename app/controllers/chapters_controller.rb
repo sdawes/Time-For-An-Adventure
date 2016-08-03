@@ -46,7 +46,8 @@ class ChaptersController < ApplicationController
     @adventure = Adventure.find(params[:adventure_id])
     @chapter = Chapter.find(params[:id])
     @chapter.update(chapter_params)
-    redirect_to adventure_design_path(@adventure)
+    @choice = Choice.where(id: @chapter.parent_choice_id).first
+    redirect_to edit_adventure_chapter_choice_path(@adventure,@chapter,@choice)
   end
 
 
