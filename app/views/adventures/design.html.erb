@@ -7,6 +7,9 @@
   <body>
     <h1>Design your Adventure</h1>
     <%= @adventure.title %><br>
+    <div class='tree'>
+      <%= @adventure.create_tree(@adventure.chapters.first).html_safe %>
+    </div>
     <%= link_to "Start", new_adventure_chapter_path(@adventure) %>
     <% @chapters.each do |chapter| %>
       <%= chapter.description %><br>
