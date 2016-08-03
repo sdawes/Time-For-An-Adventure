@@ -4,7 +4,7 @@ class ChaptersController < ApplicationController
 
   def show
     @adventure = Adventure.find(params[:adventure_id])
-
+    @all_chapters = Chapter.count
     @chapter = Chapter.find(params[:id])
 
     @choices = Choice.where(chapter_id: @chapter.id)
