@@ -13,7 +13,6 @@
     <%= link_to "Start", new_adventure_chapter_path(@adventure) %>
     <% @chapters.each do |chapter| %>
       <%= chapter.description %><br>
-      <%= link_to "Add Choice", new_adventure_chapter_choice_path(@adventure, chapter.id) %>
       <%= link_to "Update Chapter",  edit_adventure_chapter_path(@adventure, chapter.id)%>
       <%= link_to "Delete Chapter", adventure_chapter_destroy_children_chapters_path(@adventure, chapter.id), method: :post %><br>
     <% end %>
