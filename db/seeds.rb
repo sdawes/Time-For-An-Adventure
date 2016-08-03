@@ -50,8 +50,8 @@ Chapter.create(description: chapters[5], adventure_id: adventure.id, parent_choi
 Chapter.create(description: chapters[6], adventure_id: adventure.id, parent_choice_id: 6)
 Chapter.create(description: chapters[7], adventure_id: adventure.id, parent_choice_id: 7)
 Chapter.create(description: chapters[8], adventure_id: adventure.id, parent_choice_id: 8)
-Chapter.create(description: chapters[9], adventure_id: adventure.id, parent_choice_id: 9)
-Chapter.create(description: chapters[10], adventure_id: adventure.id, parent_choice_id: 10)
+Chapter.create(description: chapters[9], adventure_id: adventure.id, parent_choice_id: 11)
+Chapter.create(description: chapters[10], adventure_id: adventure.id, parent_choice_id: 12)
 
 
 Choice.create(option: choices[0], chapter_id: 1)
