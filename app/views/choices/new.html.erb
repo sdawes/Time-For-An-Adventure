@@ -5,11 +5,25 @@
     <title></title>
   </head>
   <body>
-    <h1>Add a Choice</h1>
-    <%= form_for [@adventure, @chapter, @choice] do |form| %>
-      <%= form.label :option %>
-      <%= form.text_area :option %>
-      <%= form.button :submit %>
-    <% end %>
+
+    <div class="design_registration_forms">
+      <div class="design_form_choice">
+        <h2 class="design_sign_up_h2">Add a choice</h2>
+        <%= image_tag "arrow.png", id: "book_image"  %>
+      </div>
+      <%= form_for [@adventure, @chapter, @choice] do |form| %>
+
+        <div class="design_field">
+          <%= form.label :option, class: "design_form_heading"  %>
+        </div>
+        <div class="design_field">
+          <%= form.text_area :option, class: "design_form_input_box" %>
+        </div>
+        <div class="design_field">
+          <%= form.button :submit, id: "design_small_submit_btn"  %>
+        </div>
+
+      <% end %>
+    </div>
   </body>
 </html>

@@ -5,16 +5,41 @@
     <title></title>
   </head>
   <body>
-    <h1>Design your Adventure</h1>
-    <%= @adventure.title %><br>
-    <div class='tree'>
-      <%= @adventure.create_tree(@adventure.chapters.first).html_safe %>
+
+    <div id="design_header">
+      <h1>Design your Adventure</h1>
     </div>
-    <%= link_to "Start", new_adventure_chapter_path(@adventure) %>
-    <% @chapters.each do |chapter| %>
-      <%= chapter.description %><br>
-      <%= link_to "Update Chapter",  edit_adventure_chapter_path(@adventure, chapter.id)%>
-      <%= link_to "Delete Chapter", adventure_chapter_destroy_children_chapters_path(@adventure, chapter.id), method: :post %><br>
-    <% end %>
+
+    <div id="design_title">
+      <%= @adventure.title %><br>
+    </div>
+
+    <div class="design_container">
+
+
+      <div class="tree">
+        <%= @adventure.create_tree(@adventure.chapters.first).html_safe %>
+      </div>
+
+      <div class="crud_container">
+
+        <div id="design_start_button">
+          <%= link_to "Start", new_adventure_chapter_path(@adventure), id: "design_start_link" %>
+        </div>
+
+        <% @chapters.each do |chapter| %>
+        <div class="design_chapter">
+          <%= chapter.description %><br>
+        </div>
+
+        <div class="update_delete_container">
+          <%= link_to "Update Chapter",  edit_adventure_chapter_path(@adventure, chapter.id), id: "design_link_update"%>
+          <%= link_to "Delete Chapter", adventure_chapter_destroy_children_chapters_path(@adventure, chapter.id),id: "design_link_delete", method: :post %><br>
+        </div>
+
+        <% end %>
+      </div>
+
+    </div>
   </body>
 </html>

@@ -30,7 +30,7 @@
   margin: 2%;
   display: flex;
   flex-direction: column;
-  height: 260px;
+  height: 215px;
   width: 280px;
   background-color: white;
   border-radius: 15px;
@@ -57,9 +57,10 @@
 .adventure_image {
   text-align: center;
   width: 100%;
-  height: 180px;
+  height: 170px;
   background-color: #e9e8e8;
   // border: 1px solid yellow;
+  border-radius: 0 0 15px 15px;
 }
 
 
@@ -93,7 +94,7 @@
     padding: 10px;
     border-radius: 13px;
     border: none;
-    color: darkred;
+    color: #8b0407;
     font-family: 'Indie Flower', cursive;
     font-weight: 200;
     text-decoration: none;
