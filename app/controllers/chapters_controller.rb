@@ -4,11 +4,8 @@ class ChaptersController < ApplicationController
 
   def show
     @adventure = Adventure.find(params[:adventure_id])
-
     @chapter = Chapter.find(params[:id])
-
     @choices = Choice.where(chapter_id: @chapter.id)
-
     @chapters = []
 
     @choices.each do |choice|
@@ -50,32 +47,35 @@ class ChaptersController < ApplicationController
   end
 
 
+  def branch_destroy
+    @adventure = Adventure.find(params[:adventure_id])
+    @chapter = Chapter.find(params[:chapter_id])
 
-  def destroy_children_chapters
-    @chapter = Chapter.find(params[:id])
-    find_children_chapters(@chapter).destroy_all
-  end
-
-  def find_children_chapters(chapter)
-    @choices = Choice.where(chapter_id: chapter.id)
-    @chapters = [chapter, find_chapters_from_choices(@choices)]
-  end
-
-  def find_chapters_from_choices(array_of_choices)
-    chapters = []
-    array_of_choices.each do |choice|
-      chapters << Chapter.where(parent_choice_id: choice.id)
-      chapters.flatten
+    children_chapters(@chapter).each do |chapter|
+      mark_to_destroy(chapter)
     end
-
+    Chapter.where(to_destroy: true).destroy_all
+    redirect_to adventure_design_path(@adventure)
   end
 
-  def destroy
-    @chapter = Chapter.find(params[:id])
-    @chapter.destroy
+  def children_chapters(chapter)
+    chapters = [chapter]
+    choices = Choice.where(chapter_id: chapter.id)
+
+    choices.each do |choice|
+      chapters << child_chapter_children(choice)
+    end
+    chapters.flatten
   end
 
+  def child_chapter_children(choice)
+    chapter = Chapter.where(parent_choice_id: choice.id).first
+    chapters = [chapter, children_chapters(chapter)]
+  end
 
+  def mark_to_destroy(chapter)
+    chapter.update(to_destroy: true)
+  end
 
   private
 

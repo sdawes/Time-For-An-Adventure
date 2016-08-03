@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get "/design", to: "adventures#design"
 
     resources :chapters do
-      post "/destroy_children_chapters", to: "chapters#bulk_destroy"
+      post "/destroy_children_chapters", to: "chapters#branch_destroy"
       resources :choices
     end
 
