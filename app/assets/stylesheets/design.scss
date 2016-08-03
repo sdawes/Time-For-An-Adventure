@@ -1,0 +1,346 @@
+#design_main_title {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2em;
+  background-color: #3a4d58;
+  width: 30%;
+  padding: 1.1%;
+  border-radius: 15px;
+  color: white;
+}
+
+#design_adv_title {
+  margin: 1% auto 0 auto;
+  text-align: center;
+  // background-color: white;
+  width: 30%;
+  border-radius: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0.5%;
+  font-family: 'Indie Flower', cursive;
+}
+
+#design_start_btn {
+  display: block;
+  background-color: #303030;
+  text-align: center;
+  width: 50px;
+  padding: 10px;
+  border-radius: 13px;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-weight: 200;
+  text-decoration: none;
+  }
+
+#design_start_btn_container {
+  margin: 0 auto;
+  width: 50px;
+}
+
+// ============= Design your adventure page ==============
+
+#design_header {
+  width: 30%;
+  background-color: #3a4d58;
+  text-align: center;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 1%;
+  font-size: 2em;
+  color: white;
+}
+
+#design_title {
+  font-family: 'Indie Flower', cursive;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1%;
+  font-size: 1.5em;
+}
+
+#design_start_button {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 13px;
+  border: none;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-weight: 200;
+  text-decoration: none;
+  display: block;
+  background-color: #3a4d58;
+  text-align: center;
+  width: 50px;
+}
+
+#design_start_link {
+  text-decoration: none;
+  color: white;
+}
+
+.update_delete_container {
+  display: flex;
+}
+
+#design_link_update {
+  font-size: 0.7em;
+  margin: 5px 2px;
+  padding: 5px;
+  border-radius: 13px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: block;
+  background-color: #416340;
+  text-align: center;
+  width: 80px;
+}
+
+#design_link_delete {
+  font-size: 0.7em;
+  margin: 5px 2px;
+  padding: 5px;
+  border-radius: 13px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: block;
+  background-color: #822b2d;
+  text-align: center;
+  width: 80px;
+}
+
+.design_chapter {
+  padding: 1%;
+  text-align: center;
+}
+
+// ============= Add a chapter ==============
+
+.design_registration_forms {
+  text-align: center;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 15px;
+  width: 325px;
+  margin: 10px auto;
+}
+
+.design_form_chapter {
+  width: 325px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  border-radius: 15px 15px 0 0;
+  background-color: #1e354d;
+  color: white;
+}
+
+.design_form_choice {
+  width: 325px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  border-radius: 15px 15px 0 0;
+  background-color: #3b2d40;
+  color: white;
+}
+
+.design_form_title_grey {
+  width: 325px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  border-radius: 15px 15px 0 0;
+  background-color: #333333;
+  color: white;
+}
+
+.design_sign_up_h2 {
+  padding: 2%;
+}
+
+#book_image {
+  width: 20%;
+  padding-bottom: 1%;
+}
+
+.design_field {
+  text-align: center;
+  margin: 2.5%;
+}
+
+.design_actions {
+ //  border: 1px solid yellow;
+  text-align: center;
+}
+
+#design_small_submit_btn {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 13px;
+  border: none;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-weight: 200;
+  text-decoration: none;
+  background-color: #1e354d;
+}
+
+#button_choice {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 13px;
+  border: none;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-weight: 200;
+  text-decoration: none;
+  background-color: #1e354d;
+}
+
+.design_form_heading {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.design_form_input_box {
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  border: none;
+  border-radius: 15px;
+  margin: 0.5%;
+  background-color: #e9e8e8;
+}
+
+// ================== tree ========================
+
+* {margin: 0; padding: 0;}
+
+.design_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // border: 1px solid green;
+}
+
+.tree ul {
+  // border: 1px solid yellow;
+	padding-top: 20px; position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.tree li {
+  // border: 1px solid lightgreen;
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 1px solid white;
+	width: 50%; height: 20px;
+}
+.tree li::after{
+	right: auto; left: 50%;
+	border-left: 1px solid white;
+}
+
+/*We need to remove left-right connectors from elements without
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+	border-right: 1px solid white;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 1px solid white;
+	width: 0; height: 20px;
+}
+
+.tree li a{
+	border: 1px solid white;
+	padding: 5px 10px;
+	text-decoration: none;
+  background-color: white;
+	color: black;
+	font-family: arial, verdana, tahoma;
+	font-size: 20px;
+	display: inline-block;
+
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+	background: lightyellow; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after,
+.tree li a:hover+ul li::before,
+.tree li a:hover+ul::before,
+.tree li a:hover+ul ul::before{
+	border-color: lightblue;
+}
+
+.crud_container {
+  margin-top: 2%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 2%;
+  margin-bottom: 2%;
+}

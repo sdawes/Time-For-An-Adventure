@@ -5,11 +5,26 @@
     <title></title>
   </head>
   <body>
-    <h1>Add a Chapter</h1>
-    <%= form_for [@adventure, @chapter] do |form| %>
-      <%= form.label :description %>
-      <%= form.text_area :description %>
-      <%= form.button :submit %>
-    <% end %>
+
+    <div class="design_registration_forms">
+      <div class="design_form_chapter">
+        <h2 class="design_sign_up_h2">Add a chapter</h2>
+        <%= image_tag "book", id: "book_image"  %>
+      </div>
+
+      <%= form_for [@adventure, @chapter] do |form| %>
+        <div class="design_field">
+          <%= form.label :description, class: "design_form_heading" %>
+        </div>
+
+        <div class="design_field">
+          <%= form.text_area :description, class: "design_form_input_box" %>
+        </div>
+
+        <div class="design_actions">
+          <%= form.button :submit, id: "button_choice" %>
+        </div>
+      <% end %>
+    </div>
   </body>
 </html>
