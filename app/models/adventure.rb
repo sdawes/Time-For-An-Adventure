@@ -15,7 +15,7 @@ class Adventure < ApplicationRecord
     html += "<ul>" if first_chapter(chapter_node)
     html += "<li><a href='/adventures/" + "#{chapter_node.adventure_id}" + "/chapters/#{chapter_node.id}/choices/new'> Chapter #{chapter_node.id}</a>"
     moreChoices?(chapter_node) ? html += "<ul>" : html += "</li>"
-    if chapter_node.parent_choice_id != nil
+    if chapter_node.parent_choice_id != nil && !moreChoices?(chapter_node)
       html += "</ul>" if end_of_row?(chapter_node)
     end
     chapter_node.choices.each do |choice|
