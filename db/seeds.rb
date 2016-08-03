@@ -5,7 +5,7 @@ synopsis = "Another deeper look in Steve's mind"
 chapters = ["The midnight train. You received the letter late - “meet at Paddington Train Station and catch the 23:59 train to Bristol. Stay sober”. You find your way to platform 8, the station is deserted.",
 
             "The quiet coach. Upon boarding, you take a seat in A24, a window seat. After 30 mins, the train arrives at Reading. You look out of the window to see a man beckoning you to disembark.",
-
+ 
             "The saloon. It is busy in the bar, with late night revellers returning to Bristol. You feel stressed out and really need a drink.",
 
             "Reading Station. Upon disembarking, the train pulls away from the station. You approach the man. He mutters something incomprehensible, waving a big issue at you. FAIL The man turns out to be nothing more than a big issue seller. You instructions specifically said to board the train to Bristol, you missed the last train there.",
@@ -49,9 +49,13 @@ Chapter.create(description: chapters[4], adventure_id: adventure.id, parent_choi
 Chapter.create(description: chapters[5], adventure_id: adventure.id, parent_choice_id: 5)
 Chapter.create(description: chapters[6], adventure_id: adventure.id, parent_choice_id: 6)
 Chapter.create(description: chapters[7], adventure_id: adventure.id, parent_choice_id: 7)
-Chapter.create(description: chapters[8], adventure_id: adventure.id, parent_choice_id: 8)
-Chapter.create(description: chapters[9], adventure_id: adventure.id, parent_choice_id: 9)
-Chapter.create(description: chapters[10], adventure_id: adventure.id, parent_choice_id: 10)
+Chapter.create(description: chapters[8], adventure_id: adventure.id, parent_choice_id: 9)
+Chapter.create(description: chapters[7], adventure_id: adventure.id, parent_choice_id: 8)
+Chapter.create(description: chapters[8], adventure_id: adventure.id, parent_choice_id: 10)
+Chapter.create(description: chapters[9], adventure_id: adventure.id, parent_choice_id: 11)
+Chapter.create(description: chapters[10], adventure_id: adventure.id, parent_choice_id: 12)
+Chapter.create(description: chapters[9], adventure_id: adventure.id, parent_choice_id: 13)
+Chapter.create(description: chapters[10], adventure_id: adventure.id, parent_choice_id: 14)
 
 
 Choice.create(option: choices[0], chapter_id: 1)
@@ -66,3 +70,5 @@ Choice.create(option: choices[7], chapter_id: 5)
 Choice.create(option: choices[7], chapter_id: 6)
 Choice.create(option: choices[8], chapter_id: 8)
 Choice.create(option: choices[9], chapter_id: 8)
+Choice.create(option: choices[8], chapter_id: 10)
+Choice.create(option: choices[9], chapter_id: 10)
