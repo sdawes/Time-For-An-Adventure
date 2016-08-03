@@ -72,3 +72,5 @@ Choice.create(option: choices[8], chapter_id: 8)
 Choice.create(option: choices[9], chapter_id: 8)
 Choice.create(option: choices[8], chapter_id: 10)
 Choice.create(option: choices[9], chapter_id: 10)
+
+Choice.create(option: "Start", chapter_id: nil)

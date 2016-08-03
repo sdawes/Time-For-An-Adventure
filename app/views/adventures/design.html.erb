@@ -7,10 +7,14 @@
   <body>
     <h1>Design your Adventure</h1>
     <%= @adventure.title %><br>
-    <%= link_to "Start", new_adventure_chapter_path(@adventure_id) %>
+    <div class='tree'>
+      <%= @adventure.create_tree(@adventure.chapters.first).html_safe %>
+    </div>
+    <%= link_to "Start", new_adventure_chapter_path(@adventure) %>
     <% @chapters.each do |chapter| %>
       <%= chapter.description %><br>
-      <%= link_to "Add choice", new_adventure_chapter_choice_path(@adventure_id, chapter.id) %><br>
+      <%= link_to "Update Chapter",  edit_adventure_chapter_path(@adventure, chapter.id)%>
+      <%= link_to "Delete Chapter", adventure_chapter_destroy_children_chapters_path(@adventure, chapter.id), method: :post %><br>
     <% end %>
   </body>
 </html>
