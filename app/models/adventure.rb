@@ -81,8 +81,12 @@ class Adventure < ApplicationRecord
   def end_of_row?(chapter)
     choice_found = find_parent_choice(chapter)
     parent_chapter = find_parent_chapter(choice_found)
-    children_chapter_ids = find_children_chapters(parent_chapter, true)
-    highest_chapter_id(children_chapter_ids, chapter)
+    if parent_chapter != nil
+      children_chapter_ids = find_children_chapters(parent_chapter, true)
+      highest_chapter_id(children_chapter_ids, chapter)
+    else
+      return false
+    end
   end
 
   def highest_chapter_id(children_chapter_ids, current_chapter)
@@ -91,11 +95,11 @@ class Adventure < ApplicationRecord
 
 
   def find_parent_choice(chapter)
-    p chapter
     Choice.find(chapter.parent_choice_id)
   end
 
   def find_parent_chapter(choice)
+    return nil if choice.chapter_id.nil?
     Chapter.find(choice.chapter_id)
   end
 
