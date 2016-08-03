@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit Chapter</h1>
+    <%= form_for [@adventure, @chapter] do |form| %>
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+      <%= form.button :submit %>
+    <% end %>
+  </body>
+</html>

@@ -6,14 +6,39 @@
     <title>Create a new Adventure</title>
   </head>
   <body>
-    <%= form_for Adventure.new do |form| %>
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-      <%= form.label :synopsis %>
-      <%= form.text_field :synopsis %>
-      <%= form.label :image %>
-      <%= form.file_field :image %>
-      <%= form.button :submit, value: "Create Adventure" %>
-    <% end %>
+    <div class="registration_forms">
+
+      <div class="form_title_create">
+        <h2 class="sign_up_h2">Create your adventure!</h2>
+      </div>
+
+      <%= form_for Adventure.new do |form| %>
+      <div class="field">
+        <%= form.label :title, class: "form_heading" %> <br>
+      </div>
+
+      <div class="field">
+        <%= form.text_field :title, class: "form_input_box" %> <br>
+      </div>
+
+      <div class="field">
+        <%= form.label :synopsis, class: "form_heading" %> <br>
+      </div>
+
+      <div class="field">
+        <%= form.text_field :synopsis, class: "form_input_box" %> <br>
+      </div>
+
+      <div class="field">
+        <%= form.label :image, class: "form_heading" %> <br>
+        <%= form.file_field :image %> <br>
+      </div>
+
+      <div class="field">
+        <%= form.button :submit, value: "Create Adventure", id: "small_log_in_btn_create" %>
+      </div>
+
+      <% end %>
+    </div>
   </body>
 </html>

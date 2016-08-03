@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit Choice</h1>
+    <%= form_for [@adventure, @chapter, @choice] do |form| %>
+      <%= form.label :option %>
+      <%= form.text_area :option %>
+      <%= form.button :submit %>
+    <% end %>
+  </body>
+</html>

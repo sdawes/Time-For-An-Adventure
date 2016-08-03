@@ -1,5 +1,5 @@
 class ChoicesController < ApplicationController
-  NUMBER_OF_CHOICES = 2
+
 
   def new
     @adventure = Adventure.find(params[:adventure_id])
@@ -14,6 +14,20 @@ class ChoicesController < ApplicationController
     @choice.chapter_id = @chapter.id
     @choice.save
     redirect_to new_adventure_chapter_path(@adventure)
+  end
+
+  def edit
+    @adventure = Adventure.find(params[:adventure_id])
+    @chapter = Chapter.find(params[:chapter_id])
+    @choice = Choice.find(params[:id])
+  end
+
+  def update
+    @choice = Choice.find(params[:id])
+    @choice.update(choice_params)
+    @adventure = Adventure.find(params[:adventure_id])
+    @chapter = Chapter.find(params[:chapter_id])
+    redirect_to adventure_design_path(@adventure, @chapter)
   end
 
   private
