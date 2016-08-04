@@ -149,6 +149,16 @@
   color: white;
 }
 
+.design_form_edit_chapter {
+  width: 325px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  border-radius: 15px 15px 0 0;
+  background-color: #263924;
+  color: white;
+}
+
 .design_form_title_grey {
   width: 325px;
   text-align: center;
@@ -200,6 +210,18 @@
   font-weight: 200;
   text-decoration: none;
   background-color: #1e354d;
+}
+
+#button_edit_chapter {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 13px;
+  border: none;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-weight: 200;
+  text-decoration: none;
+  background-color: #263924;
 }
 
 .design_form_heading {
