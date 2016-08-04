@@ -66,7 +66,7 @@ class Adventure < ApplicationRecord
 
   def find_chapters_from_choices(array_of_choices, array_of_ids)
     chapters = []
-    if array_of_ids = false
+    if array_of_ids == false
       array_of_choices.each do |choice|
         chapters << Chapter.where(parent_choice_id: choice.id)
       end

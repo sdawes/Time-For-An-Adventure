@@ -5,7 +5,7 @@ synopsis = "Another deeper look in Steve's mind"
 chapters = ["The midnight train. You received the letter late - “meet at Paddington Train Station and catch the 23:59 train to Bristol. Stay sober”. You find your way to platform 8, the station is deserted.",
 
             "The quiet coach. Upon boarding, you take a seat in A24, a window seat. After 30 mins, the train arrives at Reading. You look out of the window to see a man beckoning you to disembark.",
- 
+
             "The saloon. It is busy in the bar, with late night revellers returning to Bristol. You feel stressed out and really need a drink.",
 
             "Reading Station. Upon disembarking, the train pulls away from the station. You approach the man. He mutters something incomprehensible, waving a big issue at you. FAIL The man turns out to be nothing more than a big issue seller. You instructions specifically said to board the train to Bristol, you missed the last train there.",
@@ -37,8 +37,9 @@ choices = ["Board coach A - the quiet coach.",
            "Follow the man towards the river."]
 
 
+user = User.create(user_name: "admin", email: "admin@mail.com", password: "password123456", password_confirmation: "password123456")
 
-Adventure.create(title: adventure, synopsis: synopsis, image: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
+Adventure.create(title: adventure, synopsis: synopsis, image: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/Bristol.jpeg', 'image/jpeg'), user_id: user.id)
 
 adventure = Adventure.where(title: "The midnight train to Bristol").first
 Chapter.create(description: chapters[0], adventure_id: adventure.id)
