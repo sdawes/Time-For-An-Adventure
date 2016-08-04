@@ -66,6 +66,7 @@ describe Adventure, type: :model do
     choice3   = Choice.create(option: 'choice 1', chapter_id: chapter1.id)
     chapter3  = Chapter.create(description: 'hello world', adventure_id: adventure.id, parent_choice_id: choice3.id)
 
+
     expect(adventure.create_tree(adventure.chapters.first)).to eq "<ul><li><a href='#'>Chapter #{chapter1.id}</a><ul><li><a href='#'>Chapter #{chapter2.id}</a></li><li><a href='#'>Chapter #{chapter3.id}</a></li></ul></li></ul>"
   end
 
