@@ -6,5 +6,4 @@ class Chapter < ApplicationRecord
   accepts_nested_attributes_for :choices
 
   # validates :description, :adventure_id, presence: true
-
 end

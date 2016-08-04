@@ -29,6 +29,7 @@ class Adventure < ApplicationRecord
   def create_tree(chapter_node)
     return '' if chapter_node.nil?
     html = traverse_tree(chapter_node)
+    html = html.chomp('</ul>')
     html += "</ul></li>" * calculate_uls(html)
     html += "</ul>"
   end

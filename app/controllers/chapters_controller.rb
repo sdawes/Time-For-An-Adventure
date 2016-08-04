@@ -7,20 +7,15 @@ class ChaptersController < ApplicationController
     if game
       update_game(game)
       @chapter = Chapter.find(game.chapters.split(',').last)
-      @choices = Choice.where(chapter_id: @chapter.id)
-      @chapters = []
-      @choices.each do |choice|
-        @chapters << [choice, Chapter.where(parent_choice_id: choice.id).first]
-      end
     else
       Game.create(chapters: params[:id], choices: "", adventure_id: params[:adventure_id], user_id: current_user.id)
       @chapter = Chapter.find(params[:id])
+    end
       @choices = Choice.where(chapter_id: @chapter.id)
       @chapters = []
       @choices.each do |choice|
         @chapters << [choice, Chapter.where(parent_choice_id: choice.id).first]
       end
-    end
   end
 
   def new
@@ -62,27 +57,36 @@ class ChaptersController < ApplicationController
   def branch_destroy
     @adventure = Adventure.find(params[:adventure_id])
     @chapter = Chapter.find(params[:chapter_id])
+    @choices = Choice.where(chapter_id: @chapter.id)
 
-    children_chapters(@chapter).each do |chapter|
-      mark_to_destroy(chapter)
+    if @choices == []
+      mark_to_destroy(@chapter)
+    else
+      children_chapters(@chapter, @choices).each do |chapter|
+        mark_to_destroy(chapter)
+      end
     end
+
     Chapter.where(to_destroy: true).destroy_all
     redirect_to adventure_design_path(@adventure)
   end
 
-  def children_chapters(chapter)
+  def children_chapters(chapter, choices)
     chapters = [chapter]
-    choices = Choice.where(chapter_id: chapter.id)
-
     choices.each do |choice|
-      chapters << child_chapter_children(choice)
+    chapters << child_chapter_children(choice)
     end
     chapters.flatten
   end
 
   def child_chapter_children(choice)
-    chapter = Chapter.where(parent_choice_id: choice.id).first
-    chapters = [chapter, children_chapters(chapter)]
+    chapter = Chapter.where(parent_choice_id: choice.id)
+    if chapter == []
+      chapter
+    else
+      choices = Choice.where(chapter_id: chapter.first.id)
+      chapters = [chapter.first, children_chapters(chapter.first, choices)]
+    end
   end
 
   def mark_to_destroy(chapter)
