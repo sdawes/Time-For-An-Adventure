@@ -183,6 +183,18 @@
         0,
         null,
         null,
+<<<<<<< HEAD
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/chapter.rb": [
+        1,
+        null,
+=======
+>>>>>>> master
         1,
         0,
         null,
@@ -192,6 +204,84 @@
       "/Users/jojograndjojo/Projects2/TFAA/app/controllers/adventures_controller.rb": [
         0,
         0,
+<<<<<<< HEAD
+        null,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/models/game.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/adventures_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        43,
+        null,
+        null,
+        1,
+        11,
+        11,
+        null,
+        null,
+        1,
+        9,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        null
+=======
         0,
         0,
         0,
@@ -228,10 +318,18 @@
         0,
         0,
         0
+>>>>>>> master
       ],
       "/Users/jojograndjojo/Projects2/TFAA/app/controllers/chapters_controller.rb": [
         0,
         0,
+<<<<<<< HEAD
+        0,
+        null,
+        null,
+        1,
+=======
+>>>>>>> master
         0,
         0,
         0,
@@ -248,6 +346,14 @@
         0,
         0,
         0,
+<<<<<<< HEAD
+        0,
+        null,
+        null,
+        null,
+        1,
+=======
+>>>>>>> master
         0,
         0,
         0,
@@ -263,6 +369,47 @@
         0,
         0,
         0,
+<<<<<<< HEAD
+        null,
+        null,
+        1,
+        4,
+        4,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/registrations_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        11,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/TFAA/app/controllers/games_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+=======
         0,
         0,
         0,
@@ -333,6 +480,7 @@
         0,
         0,
         0
+>>>>>>> master
       ],
       "/Users/jojograndjojo/Projects2/TFAA/app/controllers/choices_controller.rb": [
         0,
@@ -407,9 +555,24 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ]
     },
+<<<<<<< HEAD
+    "timestamp": 1470319653
+=======
     "timestamp": 1470303194
+>>>>>>> master
   }
 }

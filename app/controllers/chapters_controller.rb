@@ -20,6 +20,7 @@ class ChaptersController < ApplicationController
 
   def new
     @adventure = Adventure.find(params[:adventure_id])
+    is_the_user_the_owner(@adventure, current_user)
     @chapter = Chapter.new
   end
 
@@ -45,6 +46,7 @@ class ChaptersController < ApplicationController
 
   def update
     @adventure = Adventure.find(params[:adventure_id])
+    is_the_user_the_owner(@adventure, current_user)
     @chapter = Chapter.find(params[:id])
     @chapter.update(chapter_params)
     @choice = Choice.where(id: @chapter.parent_choice_id).first
@@ -100,6 +102,13 @@ class ChaptersController < ApplicationController
   def update_game(game)
     choice_id = Chapter.find(params[:id]).parent_choice_id
     game.update(chapters: "#{game.chapters},#{params[:id]}", choices: "#{game.choices},#{choice_id}") if choice_id
+  end
+
+  def is_the_user_the_owner(adventure, user)
+    if adventure.user_id != user.id
+      flash[:notice] = "Cannot edit another user's story"
+      redirect_to adventure_path(@adventure)
+    end
   end
 
 end

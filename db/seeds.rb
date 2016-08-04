@@ -37,8 +37,9 @@ choices = ["Board coach A - the quiet coach.",
            "Follow the man towards the river."]
 
 
+user = User.create(user_name: "admin", email: "admin@mail.com", password: "password123456", password_confirmation: "password123456")
 
-Adventure.create(title: adventure, synopsis: synopsis, image: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/Bristol.jpeg', 'image/jpeg'))
+Adventure.create(title: adventure, synopsis: synopsis, image: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/Bristol.jpeg', 'image/jpeg'), user_id: user.id)
 
 adventure = Adventure.where(title: "The midnight train to Bristol").first
 Chapter.create(description: chapters[0], adventure_id: adventure.id)
