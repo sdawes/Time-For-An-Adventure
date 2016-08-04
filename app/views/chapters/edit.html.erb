@@ -16,6 +16,9 @@
         <%= form_for [@adventure, @chapter] do |form| %>
       </div>
 
+      <div class="">
+        <%= form.label :description, 'Edit your chapter here', class: "design_form_heading" %>
+      </div>
         <div class="design_field">
           <%= form.text_area :description, class: "design_form_input_box" %>
         </div>

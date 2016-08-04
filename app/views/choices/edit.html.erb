@@ -8,20 +8,20 @@
 
     <div class="design_registration_forms">
 
-      <div class="design_form_edit_chapter">
+      <div class="design_form_edit_choice">
         <h2 class="design_sign_up_h2">Update Choice</h2>
         <%= image_tag "pen.png", id: "book_image"  %>
       </div>
 
       <%= form_for [@adventure, @chapter, @choice] do |form| %>
       <div class="design_field">
-        <%= form.label :option %>
+        <%= form.label :option, 'Edit your choice here', class: "design_form_heading" %>
       </div>
       <div class="design_field">
-        <%= form.text_area :option %>
+        <%= form.text_area :option, class: "design_form_input_box" %>
       </div>
       <div class="design_field">
-        <%= form.button :submit %>
+        <%= form.button :submit, id: "button_edit_choice" %>
       </div>
       <% end %>
     </div>
