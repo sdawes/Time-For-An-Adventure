@@ -9,7 +9,10 @@
       <%= @adventure.synopsis %>
     </div>
     <div class="form_play">
-      <%= link_to "Play", adventure_chapter_path(@adventure, @first_chapter), class: "play_button"%>
+      <% if @first_chapter %>
+        <%= link_to "Play", adventure_chapter_path(@adventure, @first_chapter), class: "play_button"%>
+      <% end %>
+      <%= link_to "Edit", adventure_design_path(@adventure), class: "play_button" %>
     </div>
   </body>
 </html>
