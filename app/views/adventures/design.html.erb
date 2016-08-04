@@ -23,10 +23,6 @@
 
       <div class="crud_container">
 
-        <div id="design_start_button">
-          <%= link_to "Start", new_adventure_chapter_path(@adventure), id: "design_start_link" %>
-        </div>
-
         <% @chapters.each do |chapter| %>
         <div class="design_chapter">
           <%= chapter.description %><br>
