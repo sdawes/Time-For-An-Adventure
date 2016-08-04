@@ -10,12 +10,12 @@ class ChaptersController < ApplicationController
     else
       Game.create(chapters: params[:id], choices: "", adventure_id: params[:adventure_id], user_id: current_user.id)
       @chapter = Chapter.find(params[:id])
+    end
       @choices = Choice.where(chapter_id: @chapter.id)
       @chapters = []
       @choices.each do |choice|
         @chapters << [choice, Chapter.where(parent_choice_id: choice.id).first]
       end
-    end
   end
 
   def new
