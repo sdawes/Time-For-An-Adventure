@@ -12,13 +12,13 @@
         <h2 class="sign_up_h2">Create your adventure!</h2>
       </div>
 
-      <%= form_for Adventure.new do |form| %>
+      <%= form_for @adventure do |form| %>
       <div class="field">
         <%= form.label :title, class: "form_heading" %> <br>
       </div>
 
       <div class="field">
-        <%= form.text_field :title, class: "form_input_box" %> <br>
+        <%= form.text_field :title, class: "form_input_box", required: "true" %> <br>
       </div>
 
       <div class="field">
@@ -26,12 +26,12 @@
       </div>
 
       <div class="field">
-        <%= form.text_field :synopsis, class: "form_input_box" %> <br>
+        <%= form.text_field :synopsis, class: "form_input_box", required: "true" %> <br>
       </div>
 
       <div class="field">
         <%= form.label :image, class: "form_heading" %> <br>
-        <%= form.file_field :image %> <br>
+        <%= form.file_field :image, required: "true" %> <br>
       </div>
 
       <div class="field">
