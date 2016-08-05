@@ -14,7 +14,7 @@ feature "deleting adventure" do
     attach_file 'Image', "/Users/jojograndjojo/Projects2/TFAA/lib/assets/owl jolson.jpeg"
     click_button "submit"
 
-    click_link "Start"
+
     fill_in "Description", with: "Just fucking Marlon goes to the shop"
     click_button "submit"
     expect(page).to have_link "Delete Chapter"
