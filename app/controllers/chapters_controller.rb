@@ -67,6 +67,7 @@ class ChaptersController < ApplicationController
       end
     end
 
+    delete_original_parent_choice(@chapter)
     Chapter.where(to_destroy: true).destroy_all
     redirect_to adventure_design_path(@adventure)
   end
@@ -111,4 +112,7 @@ class ChaptersController < ApplicationController
     end
   end
 
+  def delete_original_parent_choice(chapter)
+    Choice.find(chapter.parent_choice_id).destroy
+  end
 end
