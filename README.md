@@ -1,6 +1,6 @@
 ## **Time For An Adventure**
 
-![alt text](/Users/sdawes/documents/projects/TFAA/app/assets/images/readme_image.png)
+![alt text](app/assets/images/readme_image.png)
 #### Makers Academy final project
 For the culmination of the 12 week coding bootcamp, I participated in a small group to design a choose your own adventure game. The highlight was the dynamic tree diagram that generated upon creation of a new adventure, displaying chapters and associated choices.
 ###### Ruby on Rails, HTML and CSS, testing in RSpec and Capybara, postgres for databases.
